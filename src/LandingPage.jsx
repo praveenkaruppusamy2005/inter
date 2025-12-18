@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Header from './components/Header';
 import './style.css';
 import { MdMic, MdChatBubble, MdDescription, MdMonitor, MdDownload, MdSecurity, MdCode, MdSpeed } from "react-icons/md";
 import an from './assets/animation.mp4';
@@ -14,45 +16,7 @@ export default function LandingPage() {
       position: 'relative'
     }}>
       {/* Navigation / Header */}
-      <nav style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px 40px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        width: '100%'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: '24px'
-            }}>
-                I
-            </div>
-            <span style={{ fontSize: '24px', fontWeight: 'bold' }}>imodule</span>
-        </div>
-        <div>
-            <button className="google-sign" style={{ 
-                width: 'auto', 
-                padding: '10px 24px',
-                fontSize: '16px',
-                fontWeight: 600,
-                background: '#fff',
-                color: '#202124'
-            }} onClick={() => alert("Redirect to download...")}>
-                Download App
-            </button>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <div className="login-root-responsive" style={{ height: 'auto', minHeight: '80vh', padding: '60px 20px' }}>
@@ -189,6 +153,13 @@ export default function LandingPage() {
             }}>
                 Get imodule Now
             </button>
+            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                <Link to="/cancellation-refunds" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Cancellation & Refunds</Link>
+                <Link to="/terms-conditions" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Terms & Conditions</Link>
+                <Link to="/shipping" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Shipping & Delivery</Link>
+                <Link to="/privacy" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Privacy Policy</Link>
+                <Link to="/contact-us" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Contact Us</Link>
+            </div>
             <p style={{ color: '#9aa0a6' }}>© 2025 InterView Pro. All rights reserved.</p>
         </div>
       </footer>

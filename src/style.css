@@ -24,19 +24,19 @@ body,
 
 @font-face {
   font-family: "gt";
-  src: url("../assets/fonts/GT.otf") format('opentype');
+  src: url("./assets/fonts/GT.otf") format('opentype');
 }
 .chat-container{
   height: 90vh;
 }
 @font-face {
   font-family: "fira";
-  src: url("../assets/fonts/FiraSans-Regular.ttf") format('truetype');
+  src: url("./assets/fonts/FiraSans-Regular.ttf") format('truetype');
 }
 
 @font-face {
   font-family: "garamound";
-  src: url("../assets/fonts/Garamond.otf") format('opentype');
+  src: url("./assets/fonts/Garamond.otf") format('opentype');
 }
 
 /* =========================================================
