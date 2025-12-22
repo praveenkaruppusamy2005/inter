@@ -284,6 +284,7 @@ export default function LandingPage() {
                 <FaWindows style={{ fontSize: '20px' }} />
                 Get imodule for Windows
             </button>
+            <p style={{ color: '#9aa0a6' }}>Contact: <b>9159460443</b></p>
             <p style={{ color: '#9aa0a6' }}>© 2025 InterView Pro. All rights reserved.</p>
         </div>
       </footer>
