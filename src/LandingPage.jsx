@@ -1,13 +1,33 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Header from './components/Header';
 import './style.css';
-import { MdMic, MdChatBubble, MdDescription, MdMonitor, MdDownload, MdSecurity, MdCode, MdSpeed } from "react-icons/md";
+import { MdMic, MdChatBubble, MdDescription, MdMonitor, MdSecurity, MdCode, MdSpeed } from "react-icons/md";
+import { FaWindows } from "react-icons/fa";
 import an from './assets/animation.mp4';
-import { styled } from '@mui/material/styles';
-import Switch from '@mui/material/Switch';
 
 export default function LandingPage() {
+  const windowsDownloadUrl =
+    import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
+    "https://www.dropbox.com/scl/fi/cermrh7nz3vlahsxvr5n2/imodule-setup.exe?rlkey=oq80g7hohpj9j2tg88g8zpwse&st=g8xze5gh&dl=1";
+  const [downloadStarted, setDownloadStarted] = React.useState(false);
+  const [downloadDisabled, setDownloadDisabled] = React.useState(false);
+  const downloadInFlightRef = React.useRef(false);
+  const resetTimerRef = React.useRef(null);
+
+  const startDownload = () => {
+    if (downloadInFlightRef.current || downloadDisabled) return;
+    downloadInFlightRef.current = true;
+    setDownloadStarted(true);
+    setDownloadDisabled(true);
+    window.open(windowsDownloadUrl, "_blank", "noopener,noreferrer");
+
+    if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+    resetTimerRef.current = window.setTimeout(() => {
+      downloadInFlightRef.current = false;
+      setDownloadDisabled(false);
+      resetTimerRef.current = null;
+    }, 4000);
+  };
+
   return (
     <div className="app-root dark" style={{ 
       overflowY: 'auto', 
@@ -15,8 +35,113 @@ export default function LandingPage() {
       display: 'block',
       position: 'relative'
     }}>
+      {downloadStarted && (
+        <div style={{
+          position: 'fixed',
+          top: 16,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 2000,
+          width: 'min(760px, calc(100% - 32px))',
+          background: 'rgba(32, 33, 36, 0.92)',
+          color: '#fff',
+          borderRadius: 14,
+          padding: '12px 14px',
+          boxShadow: '0 10px 28px rgba(0,0,0,0.25)',
+          border: '1px solid rgba(255,255,255,0.12)',
+          backdropFilter: 'blur(10px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: 12
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
+            <div style={{
+              width: 36,
+              height: 36,
+              borderRadius: 10,
+              background: 'rgba(26,115,232,0.22)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flex: '0 0 auto'
+            }}>
+              <FaWindows size={18} color="#8ab4f8" />
+            </div>
+            <div style={{ minWidth: 0 }}>
+              <div style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>Download started</div>
+              <div style={{ fontSize: 12, opacity: 0.9, lineHeight: 1.2 }}>
+                If it didn’t start,{" "}
+                <a href={windowsDownloadUrl} target="_blank" rel="noreferrer" style={{ color: '#8ab4f8', fontWeight: 700 }}>
+                  click here
+                </a>
+                .
+              </div>
+            </div>
+          </div>
+          <button onClick={() => {
+            setDownloadStarted(false);
+            downloadInFlightRef.current = false;
+            if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+            resetTimerRef.current = null;
+          }} style={{
+            border: '1px solid rgba(255,255,255,0.16)',
+            background: 'transparent',
+            color: '#fff',
+            borderRadius: 10,
+            padding: '8px 10px',
+            cursor: 'pointer',
+            fontWeight: 700
+          }}>
+            Close
+          </button>
+        </div>
+      )}
       {/* Navigation / Header */}
-      <Header />
+      <nav style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '20px 40px',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        width: '100%'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontWeight: 'bold',
+                fontSize: '24px'
+            }}>
+                I
+            </div>
+            <span style={{ fontSize: '24px', fontWeight: 'bold' }}>imodule</span>
+        </div>
+        <div>
+            <button className="google-sign" style={{ 
+                width: 'auto', 
+                padding: '10px 24px',
+                fontSize: '16px',
+                fontWeight: 600,
+                background: 'rgba(255,255,255,0.92)',
+                color: '#202124',
+                border: '1px solid rgba(218,220,224,0.9)',
+                boxShadow: '0 10px 24px rgba(0,0,0,0.08)',
+                opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
+                cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
+              }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
+                <FaWindows style={{ fontSize: '18px' }} />
+                Download for Windows
+            </button>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <div className="login-root-responsive" style={{ height: 'auto', minHeight: '80vh', padding: '60px 20px' }}>
@@ -42,11 +167,14 @@ export default function LandingPage() {
                     padding: '16px 32px',
                     fontSize: '18px',
                     fontWeight: 600,
-                    background: '#1a73e8',
+                    background: 'linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%)',
                     color: 'white',
-                    border: 'none'
-                }}>
-                    <MdDownload style={{ marginRight: '8px', fontSize: '24px' }} />
+                    border: 'none',
+                    boxShadow: '0 18px 32px rgba(26,115,232,0.22)',
+                    opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
+                    cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
+                  }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
+                    <FaWindows style={{ marginRight: '8px', fontSize: '22px' }} />
                     Download for Windows
                 </button>
                 <button className="google-sign" style={{ 
@@ -149,17 +277,13 @@ export default function LandingPage() {
                 background: '#fff',
                 color: '#202124',
                 border: 'none',
-                marginBottom: '40px'
-            }}>
-                Get imodule Now
+                marginBottom: '40px',
+                opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
+                cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
+              }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
+                <FaWindows style={{ fontSize: '20px' }} />
+                Get imodule for Windows
             </button>
-            <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                <Link to="/cancellation-refunds" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Cancellation & Refunds</Link>
-                <Link to="/terms-conditions" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Terms & Conditions</Link>
-                <Link to="/shipping" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Shipping & Delivery</Link>
-                <Link to="/privacy" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Privacy Policy</Link>
-                <Link to="/contact-us" style={{ color: '#9aa0a6', textDecoration: 'none' }}>Contact Us</Link>
-            </div>
             <p style={{ color: '#9aa0a6' }}>© 2025 InterView Pro. All rights reserved.</p>
         </div>
       </footer>
