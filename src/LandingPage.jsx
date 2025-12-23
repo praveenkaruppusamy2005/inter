@@ -1,10 +1,14 @@
 import React from 'react';
-import './style.css';
-import { MdMic, MdChatBubble, MdDescription, MdMonitor, MdSecurity, MdCode, MdSpeed } from "react-icons/md";
+import { useLocation } from 'react-router-dom';
+import { MdCheckCircle, MdCode, MdGraphicEq, MdPhoneIphone, MdSecurity, MdSpeed, MdSupportAgent } from "react-icons/md";
 import { FaWindows } from "react-icons/fa";
+import { PiMicrosoftTeamsLogoBold } from "react-icons/pi";
+import { SiAmazon, SiGooglemeet, SiHackerrank, SiZoom } from "react-icons/si";
 import an from './assets/animation.mp4';
+import programmers from './assets/make.jpg';
 
 export default function LandingPage() {
+  const location = useLocation();
   const windowsDownloadUrl =
     import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
     "https://www.dropbox.com/scl/fi/cermrh7nz3vlahsxvr5n2/imodule-setup.exe?rlkey=oq80g7hohpj9j2tg88g8zpwse&st=g8xze5gh&dl=1";
@@ -28,17 +32,26 @@ export default function LandingPage() {
     }, 4000);
   };
 
+  React.useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace("#", "");
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [location.hash]);
+
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="app-root dark" style={{ 
-      overflowY: 'auto', 
-      height: '100vh',
-      display: 'block',
-      position: 'relative'
-    }}>
+    <>
       {downloadStarted && (
         <div style={{
           position: 'fixed',
-          top: 16,
+          top: 90,
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 2000,
@@ -97,214 +110,173 @@ export default function LandingPage() {
           </button>
         </div>
       )}
-      {/* Navigation / Header */}
-      <nav style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px 40px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        width: '100%'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: '24px'
-            }}>
-                I
-            </div>
-            <span style={{ fontSize: '24px', fontWeight: 'bold' }}>imodule</span>
-        </div>
-        <div>
-            <button className="google-sign" style={{ 
-                width: 'auto', 
-                padding: '10px 24px',
-                fontSize: '16px',
-                fontWeight: 600,
-                background: 'rgba(255,255,255,0.92)',
-                color: '#202124',
-                border: '1px solid rgba(218,220,224,0.9)',
-                boxShadow: '0 10px 24px rgba(0,0,0,0.08)',
-                opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
-                cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
-              }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
-                <FaWindows style={{ fontSize: '18px' }} />
-                Download for Windows
-            </button>
-        </div>
-      </nav>
 
-      {/* Hero Section */}
-      <div className="login-root-responsive" style={{ height: 'auto', minHeight: '80vh', padding: '60px 20px' }}>
-        <div className="login-content-col" style={{ alignItems: 'flex-start', maxWidth: '600px', paddingRight: '40px' }}>
-            <h1 style={{ 
-                fontSize: '56px', 
-                lineHeight: '1.1', 
-                marginBottom: '24px',
-                background: 'linear-gradient(to right, #000 0%, #555 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                fontWeight: 800
-            }}>
-                Your AI Copilot for Technical Interviews
-            </h1>
-            <p style={{ fontSize: '20px', color: '#5f6368', marginBottom: '40px', lineHeight: '1.6' }}>
-                Real-time transcription, context-aware AI hints, and resume analysis—all in a discreet, undetectable overlay. Ace your next interview with confidence.
-            </p>
-            
-            <div style={{ display: 'flex', gap: '16px' }}>
-                <button className="google-sign" style={{ 
-                    width: 'auto', 
-                    padding: '16px 32px',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    background: 'linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%)',
-                    color: 'white',
-                    border: 'none',
-                    boxShadow: '0 18px 32px rgba(26,115,232,0.22)',
-                    opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
-                    cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
-                  }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
-                    <FaWindows style={{ marginRight: '8px', fontSize: '22px' }} />
-                    Download for Windows
-                </button>
-                <button className="google-sign" style={{ 
-                    width: 'auto', 
-                    padding: '16px 32px',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    background: 'transparent',
-                    border: '2px solid #dadce0',
-                    color: '#202124'
-                }}>
-                    View Demo
-                </button>
-            </div>
-            <div style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#5f6368' }}>
-                <MdSecurity color="#34a853" /> Secure & Local
-                <span style={{ margin: '0 8px' }}>•</span>
-                <MdSpeed color="#ea4335" /> Low Latency
-                <span style={{ margin: '0 8px' }}>•</span>
-                <MdCode color="#fbbc04" /> Syntax Highlighting
-            </div>
-        </div>
-
-        <div className="login-video-col" style={{ maxWidth: '600px' }}>
-            {/* Using the app's actual animation or a mockup */}
-            <div style={{ 
-                position: 'relative',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-                border: '8px solid #fff'
-            }}>
-                <video src={an} autoPlay loop muted style={{ width: '100%', display: 'block' }}></video>
+      <main>
+        <section className="hero" id="top">
+          <div className="marketing-container">
+            <div className="hero-grid">
+              <div>
+                <h1 className="hero-title">Nail your job interview with your interview AI copilot</h1>
+                <p className="hero-subtitle">
+                  InterView Pro helps you prepare and practice for interviews. It can transcribe your calls and generate study-ready answer suggestions — we do not provide live support during interviews.
+                </p>
                 
-                {/* Floating UI Mockup Overlay */}
-                <div style={{
-                    position: 'absolute',
-                    bottom: '20px',
-                    left: '20px',
-                    right: '20px',
-                    background: 'rgba(255,255,255,0.95)',
-                    padding: '16px',
-                    borderRadius: '12px',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                    backdropFilter: 'blur(10px)'
-                }}>
-                    <div style={{ display: 'flex', gap: '12px', marginBottom: '8px' }}>
-                        <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#e8f0fe', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                            <MdChatBubble color="#1a73e8" size={18} />
-                        </div>
-                        <div>
-                            <div style={{ fontSize: '12px', fontWeight: 600, color: '#1a73e8' }}>AI Assistant</div>
-                            <div style={{ fontSize: '14px', color: '#202124' }}>Suggested approach: Use a Hash Map to store frequency...</div>
-                        </div>
-                    </div>
+                <div className="hero-actions">
+                  <button
+                    className="btn-primary"
+                    onClick={startDownload}
+                    disabled={downloadStarted || downloadDisabled}
+                    style={{ opacity: downloadStarted || downloadDisabled ? 0.7 : 1 }}
+                  >
+                    <FaWindows style={{ marginRight: 8, fontSize: 18 }} />
+                    Download
+                  </button>
+                  <button className="btn-secondary" onClick={() => scrollToId("features")}>
+                    Learn more
+                  </button>
                 </div>
+                <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 16 }}>
+                  <span className="rating-badge">
+                    <MdSecurity />
+                    Secure & Local
+                  </span>
+                  <span className="rating-badge">
+                    <MdSpeed />
+                    Low Latency
+                  </span>
+                </div>
+              </div>
+              <div className="hero-media">
+                <video src={an} autoPlay loop muted className="hero-video" />
+              </div>
             </div>
-        </div>
-      </div>
+          </div>
+        </section>
 
-      {/* Features Grid */}
-      <div style={{ padding: '80px 20px', background: '#f8f9fa' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h2 style={{ textAlign: 'center', fontSize: '36px', marginBottom: '60px', color: '#202124' }}>Why Top Candidates Choose imodule</h2>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '32px' }}>
-                <FeatureCard 
-                    icon={<MdMic size={32} color="#1a73e8" />}
-                    title="Real-time Transcription"
-                    desc="Captures interviewer questions instantly with high-accuracy speech-to-text, even for technical jargon."
-                />
-                <FeatureCard 
-                    icon={<MdDescription size={32} color="#ea4335" />}
-                    title="Resume Context"
-                    desc="The AI understands your resume and experience, tailoring answers to highlight your specific strengths."
-                />
-                <FeatureCard 
-                    icon={<MdMonitor size={32} color="#34a853" />}
-                    title="Undetectable Overlay"
-                    desc="Stays always-on-top but invisible to screen sharing. Focus on the interview, not switching tabs."
-                />
-                <FeatureCard 
-                    icon={<MdCode size={32} color="#fbbc04" />}
-                    title="Live Coding Support"
-                    desc="Get syntax-highlighted code snippets and algorithm explanations in real-time."
-                />
+        <section className="section" id="about">
+          <div className="marketing-container">
+            <h2 className="section-title">About InterView Pro</h2>
+            <p className="section-subtitle">
+              InterView Pro provides real-time interview assistance across technical and non-technical roles. Use the desktop app during Zoom, Google Meet, or Teams calls to get discreet guidance and boost your performance.
+            </p>
+            <div className="card-grid-3">
+              <div className="card">
+                <div className="card-title">What You Get</div>
+                <p className="card-text">
+                  Real-time help for coding rounds, system design, behavioral questions, and situational prompts.
+                </p>
+              </div>
+              <div className="card">
+                <div className="card-title">How It Works</div>
+                <p className="card-text">
+                  Download the Windows app, start your interview call, and enable the assistant for discreet help while you stay focused.
+                </p>
+              </div>
+              <div className="card">
+                <div className="card-title">Support</div>
+                <p className="card-text">
+                  Contact us at 9159460443 or interviewpro4@gmail.com. See Pricing and Policies for details.
+                </p>
+              </div>
             </div>
-        </div>
-      </div>
+          </div>
+        </section>
 
-      {/* Footer */}
-      <footer style={{ background: '#202124', color: '#fff', padding: '60px 20px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '32px', marginBottom: '24px' }}>Ready to land your dream job?</h2>
-            <button className="google-sign" style={{ 
-                width: 'auto', 
-                padding: '16px 40px',
-                fontSize: '18px',
-                fontWeight: 600,
-                background: '#fff',
-                color: '#202124',
-                border: 'none',
-                marginBottom: '40px',
-                opacity: (downloadStarted || downloadDisabled) ? 0.7 : 1,
-                cursor: (downloadStarted || downloadDisabled) ? 'not-allowed' : 'pointer'
-              }} onClick={startDownload} disabled={downloadStarted || downloadDisabled}>
-                <FaWindows style={{ fontSize: '20px' }} />
-                Get imodule for Windows
-            </button>
-            <p style={{ color: '#9aa0a6' }}>Contact: <b>9159460443</b></p>
-            <p style={{ color: '#9aa0a6' }}>© 2025 InterView Pro. All rights reserved.</p>
-        </div>
-      </footer>
+        <section className="section" id="features">
+          <div className="marketing-container">
+            <h2 className="section-title">Conquer Technical Interviews the Effortless Way</h2>
+            <p className="section-subtitle">
+              Built for software developer interviews: get fast, structured support without breaking your flow.
+            </p>
+            <div className="card-grid-3">
+              <StepCard
+                icon={<MdPhoneIphone size={22} />}
+                title="1. Open the App"
+                text="Launch imodule and get ready in seconds."
+              />
+              <StepCard
+                icon={<MdGraphicEq size={22} />}
+                title="2. Enable App Features"
+                text="Turn on practice and transcription features in the desktop app."
+              />
+              <StepCard
+                icon={<MdSupportAgent size={22} />}
+                title="3. Generate Suggestions"
+                text="Create concise, speakable answer suggestions for preparation."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="platforms">
+          <div className="marketing-container">
+            <h2 className="section-title">Works with popular interview platforms</h2>
+            <p className="section-subtitle">
+              Integrates into your workflow for preparation, transcription, and review.
+            </p>
+            <div className="platform-row">
+              <PlatformTile label="Google Meet" icon={<SiGooglemeet size={20} color="#34a853" />} />
+              <PlatformTile label="Amazon Chime" icon={<SiAmazon size={20} color="#ff9900" />} />
+              <PlatformTile label="Zoom" icon={<SiZoom size={20} color="#2d8cff" />} />
+              <PlatformTile label="Microsoft Teams" icon={<PiMicrosoftTeamsLogoBold size={20} color="#6264A7" />} />
+              <PlatformTile label="HackerRank" icon={<SiHackerrank size={20} color="#00EA64" />} />
+              <PlatformTile label="CoderPad" icon={<MdCode size={20} color="#0f172a" />} />
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="developers">
+          <div className="marketing-container">
+            <h2 className="section-title">Tailored Support for Every Profession.</h2>
+            <div className="split">
+              <div className="image-panel">
+                <img src={programmers} alt="Built for developers" />
+              </div>
+              <div>
+                <p style={{ color: '#4f46e5', fontWeight: 600, marginBottom: 20 }}>From technical assessments to case analyses</p>
+                
+                <div className="bullet">
+                  <div className="bullet-title">For Developers</div>
+                  <p className="bullet-text">
+                    Get real-time assistance with coding challenges, algorithm explanations, and technical interview prep. Impress recruiters with your problem-solving skills and land your dream dev job.
+                  </p>
+                </div>
+                <div className="bullet">
+                  <div className="bullet-title">For Marketing Professionals</div>
+                  <p className="bullet-text">
+                    Craft compelling answers, showcase your strategic thinking, and navigate behavioral questions with ease. Our platform equips you with the tools to present your best self and win over any marketing team.
+                  </p>
+                </div>
+                <div className="bullet">
+                  <div className="bullet-title">For Sales Representatives</div>
+                  <p className="bullet-text">
+                    Master the art of persuasion, handle objections like a pro, and deliver impactful sales pitches. Our software helps you demonstrate your sales prowess and land that top sales role.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
+function StepCard({ icon, title, text }) {
+  return (
+    <div className="card">
+      <div className="card-icon">{icon}</div>
+      <div className="card-title">{title}</div>
+      <p className="card-text">{text}</p>
     </div>
   );
 }
 
-function FeatureCard({ icon, title, desc }) {
-    return (
-        <div style={{ 
-            background: '#fff', 
-            padding: '32px', 
-            borderRadius: '16px', 
-            boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-            transition: 'transform 0.2s',
-            border: '1px solid #dadce0'
-        }}>
-            <div style={{ marginBottom: '20px' }}>{icon}</div>
-            <h3 style={{ fontSize: '20px', fontWeight: 600, marginBottom: '12px', color: '#202124' }}>{title}</h3>
-            <p style={{ color: '#5f6368', lineHeight: '1.5' }}>{desc}</p>
-        </div>
-    );
+function PlatformTile({ icon, label }) {
+  return (
+    <div className="platform-tile">
+      <span className="platform-tile-icon">{icon}</span>
+      <span className="platform-tile-label">{label}</span>
+    </div>
+  );
 }
