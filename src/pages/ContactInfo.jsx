@@ -12,6 +12,7 @@ export default function ContactInfo() {
           <div className="legal-card">
             <div className="legal-card-title">Support</div>
             <div className="legal-card-text" style={{ lineHeight: 1.9 }}>
+              Name: <span style={{ fontWeight: 900 }}>MUTHUSAMY PRAVEEN KARUPPUSAMY</span>
               Phone: <span style={{ fontWeight: 900 }}>9159460443</span>
               <br />
               Email: <span style={{ fontWeight: 900 }}>interviewpro4@gmail.com</span>
