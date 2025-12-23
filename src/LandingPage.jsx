@@ -157,19 +157,19 @@ export default function LandingPage() {
           <div className="marketing-container">
             <h2 className="section-title">About InterView Pro</h2>
             <p className="section-subtitle">
-              InterView Pro provides real-time interview assistance across technical and non-technical roles. Use the desktop app during Zoom, Google Meet, or Teams calls to get discreet guidance and boost your performance.
+              InterView Pro provides comprehensive interview preparation assistance. Use the desktop app to practice your responses, review transcriptions of your mock sessions, and boost your confidence before the real deal.
             </p>
             <div className="card-grid-3">
               <div className="card">
                 <div className="card-title">What You Get</div>
                 <p className="card-text">
-                  Real-time help for coding rounds, system design, behavioral questions, and situational prompts.
+                  Preparation help for coding rounds, system design, behavioral questions, and situational prompts.
                 </p>
               </div>
               <div className="card">
                 <div className="card-title">How It Works</div>
                 <p className="card-text">
-                  Download the Windows app, start your interview call, and enable the assistant for discreet help while you stay focused.
+                  Download the Windows app, record your practice sessions, and review AI-generated insights to improve your performance.
                 </p>
               </div>
               <div className="card">

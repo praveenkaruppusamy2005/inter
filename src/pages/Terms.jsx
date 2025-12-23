@@ -16,7 +16,7 @@ export default function Terms() {
         </p>
         <h2 className="legal-h2">Pricing</h2>
         <p className="legal-p">
-          Coaching sessions (non-live during interviews) are billed at 100 per hour. You are responsible for payment of all charges incurred for scheduled sessions.
+          Coaching sessions (non-live during interviews) are billed at ₹100 INR per hour. You are responsible for payment of all charges incurred for scheduled sessions.
         </p>
         <h2 className="legal-h2">Cancellations and Rescheduling</h2>
         <p className="legal-p">

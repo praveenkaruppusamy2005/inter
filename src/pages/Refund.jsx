@@ -8,7 +8,7 @@ export default function Refund() {
         <p className="legal-p">Last updated: December 2025</p>
         <h2 className="legal-h2">No Refunds</h2>
         <p className="legal-p">
-          All services are provided on an hourly basis and billed at 100 per hour. Due to the nature of real-time interview assistance, all payments are final and non-refundable once a session has begun or been completed.
+          All services are provided on an hourly basis and billed at ₹100 INR per hour. Due to the nature of the service, all payments are final and non-refundable once a session has begun or been completed.
         </p>
         <h2 className="legal-h2">Rescheduling</h2>
         <p className="legal-p">

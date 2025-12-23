@@ -14,6 +14,7 @@ export default function Policies() {
           <Link to="/terms" className="btn-secondary" style={{ textAlign: 'center' }}>Terms of Service</Link>
           <Link to="/refund" className="btn-secondary" style={{ textAlign: 'center' }}>Refund Policy</Link>
         </div>
+        <div style={{height: 100, width: '100%'}}></div>
       </div>
     </main>
   );
