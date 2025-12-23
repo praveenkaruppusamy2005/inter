@@ -1,4 +1,5 @@
 import React from 'react';
+import PopupModal from './components/PopupModal';
 import { useLocation } from 'react-router-dom';
 import { MdCheckCircle, MdCode, MdGraphicEq, MdPhoneIphone, MdSecurity, MdSpeed, MdSupportAgent } from "react-icons/md";
 import { FaWindows } from "react-icons/fa";
@@ -11,7 +12,8 @@ export default function LandingPage() {
   const location = useLocation();
   const windowsDownloadUrl =
     import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
-    "https://www.dropbox.com/scl/fi/cermrh7nz3vlahsxvr5n2/imodule-setup.exe?rlkey=oq80g7hohpj9j2tg88g8zpwse&st=g8xze5gh&dl=1";
+    "https://www.dropbox.com/scl/fi/vp70jbw7txvp1ggonquh9/imodule-Setup-1.0.13.exe?rlkey=zzcop6gw4uezvn4mui12k54lo&st=3gvojkio&dl=1";
+  const [modalOpen, setModalOpen] = React.useState(false);
   const [downloadStarted, setDownloadStarted] = React.useState(false);
   const [downloadDisabled, setDownloadDisabled] = React.useState(false);
   const downloadInFlightRef = React.useRef(false);
@@ -19,11 +21,15 @@ export default function LandingPage() {
 
   const startDownload = () => {
     if (downloadInFlightRef.current || downloadDisabled) return;
+    setModalOpen(true);
+  };
+
+  const handleDownloadConfirm = () => {
     downloadInFlightRef.current = true;
     setDownloadStarted(true);
     setDownloadDisabled(true);
+    setModalOpen(false);
     window.open(windowsDownloadUrl, "_blank", "noopener,noreferrer");
-
     if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
     resetTimerRef.current = window.setTimeout(() => {
       downloadInFlightRef.current = false;
@@ -48,6 +54,32 @@ export default function LandingPage() {
 
   return (
     <>
+      <PopupModal open={modalOpen} onClose={() => setModalOpen(false)} title="Download InterView Pro">
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+          <FaWindows size={40} color="#1976d2" style={{ marginBottom: 8 }} />
+          <div style={{ fontSize: 16, fontWeight: 500, textAlign: 'center' }}>
+            Download the Windows app to get started with InterView Pro.<br />
+            Would you like to download now?
+          </div>
+          <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
+            <button
+              className="btn-primary"
+              onClick={handleDownloadConfirm}
+              style={{ minWidth: 100 }}
+              disabled={downloadDisabled}
+            >
+              Download
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={() => setModalOpen(false)}
+              style={{ minWidth: 100 }}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </PopupModal>
       {downloadStarted && (
         <div style={{
           position: 'fixed',
