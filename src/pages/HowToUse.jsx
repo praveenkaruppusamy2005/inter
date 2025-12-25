@@ -184,7 +184,6 @@ export default function HowToUse() {
           </section>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
