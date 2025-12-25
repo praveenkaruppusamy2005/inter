@@ -14,6 +14,7 @@ import Policies from "./pages/Policies";
 import ContactInfo from "./pages/ContactInfo";
 import HowToUse from "./pages/HowToUse";
 import DownloadPage from "./pages/DownloadPage";
+import PaymentComplete from "./pages/PaymentComplete";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund" element={<Refund />} />
+          <Route path="/payment-complete" element={<PaymentComplete />} />
           <Route path="*" element={<LandingPage />} />
         </Route>
       </Routes>
