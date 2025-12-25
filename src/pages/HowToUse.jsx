@@ -8,7 +8,7 @@ import './HowToUse.css';
 export default function HowToUse() {
   return (
     <div className="app-layout">
-      <Header />
+     
       <div className="how-to-use-page">
         {/* Hero Section */}
         <div className="how-to-hero">
