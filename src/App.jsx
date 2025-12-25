@@ -13,6 +13,7 @@ import Terms from "./pages/Terms";
 import Policies from "./pages/Policies";
 import ContactInfo from "./pages/ContactInfo";
 import HowToUse from "./pages/HowToUse";
+import DownloadPage from "./pages/DownloadPage";
 
 function App() {
   return (
@@ -20,8 +21,8 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/download" element={<DownloadRedirect />} />
-          <Route path="/download/windows" element={<DownloadRedirect />} />
+          <Route path="/download" element={<DownloadPage />} />
+          <Route path="/download/windows" element={<DownloadPage />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/contact" element={<Contact />} />

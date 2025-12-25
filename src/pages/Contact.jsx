@@ -12,19 +12,10 @@ export default function Contact() {
           <Card>
             <div style={{ fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>Support</div>
             <div style={{ color: "rgba(15, 23, 42, 0.68)", lineHeight: 1.8 }}>
-              Phone: <span style={{ fontWeight: 900, color: "#0f172a" }}>9159460443</span>
-              <br />
               Email: <span style={{ fontWeight: 900, color: "#0f172a" }}>interviewpro4@gmail.com</span>
             </div>
           </Card>
-          <Card>
-            <div style={{ fontWeight: 900, color: "#0f172a", marginBottom: 8 }}>General Inquiries</div>
-            <div style={{ color: "rgba(15, 23, 42, 0.68)", lineHeight: 1.8 }}>
-              For partnerships and other questions:
-              <br />
-              Email: <span style={{ fontWeight: 900, color: "#0f172a" }}>contact@interviewpro.ai</span>
-            </div>
-          </Card>
+          
         </div>
       </div>
     </main>

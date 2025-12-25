@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/Screen.png';
 
 export default function Header() {
   const location = useLocation();
+  const [showPoliciesDropdown, setShowPoliciesDropdown] = useState(false);
 
   const isActive = (to, hash) => {
     if (hash) return location.pathname === to && location.hash === hash;
@@ -23,8 +24,37 @@ export default function Header() {
           <div className="nav-links">
             <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link>
             <Link to="/#about" className={`nav-link ${isActive('/', '#about') ? 'active' : ''}`}>About</Link>
+            <Link to="/download" className={`nav-link ${isActive('/download') ? 'active' : ''}`}>Download</Link>
             <Link to="/pricing" className={`nav-link ${isActive('/pricing') ? 'active' : ''}`}>Pricing</Link>
-            <Link to="/policies" className={`nav-link ${isActive('/policies') ? 'active' : ''}`}>Policies</Link>
+            
+            <div 
+              className="nav-dropdown"
+              onMouseEnter={() => setShowPoliciesDropdown(true)}
+              onMouseLeave={() => setShowPoliciesDropdown(false)}
+            >
+              <Link 
+                to="/policies" 
+                className={`nav-link ${isActive('/policies') || showPoliciesDropdown ? 'active' : ''}`}
+                onClick={(e) => {
+                  if (window.innerWidth < 768) {
+                    e.preventDefault();
+                    setShowPoliciesDropdown(!showPoliciesDropdown);
+                  }
+                }}
+              >
+                Policies
+              </Link>
+              
+              {showPoliciesDropdown && (
+                <div className="nav-dropdown-menu">
+                  <Link to="/policies" className="nav-dropdown-link">All Policies</Link>
+                  <Link to="/privacy" className="nav-dropdown-link">Privacy Policy</Link>
+                  <Link to="/terms" className="nav-dropdown-link">Terms of Service</Link>
+                  <Link to="/refund" className="nav-dropdown-link">Refund Policy</Link>
+                </div>
+              )}
+            </div>
+            
             <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact Us</Link>
           </div>
 

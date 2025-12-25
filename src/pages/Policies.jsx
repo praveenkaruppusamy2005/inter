@@ -5,16 +5,32 @@ export default function Policies() {
   return (
     <main className="legal-main">
       <div className="legal-wrap">
-        <h1 className="legal-h1">Legal & Policies</h1>
-        <p className="legal-p">
-          Transparency is key to our relationship with you. Below you will find links to our important legal documents.
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginTop: 20 }}>
-          <Link to="/privacy" className="btn-secondary" style={{ textAlign: 'center' }}>Privacy Policy</Link>
-          <Link to="/terms" className="btn-secondary" style={{ textAlign: 'center' }}>Terms of Service</Link>
-          <Link to="/refund" className="btn-secondary" style={{ textAlign: 'center' }}>Refund Policy</Link>
+        <div className="legal-header">
+          <h1 className="legal-h1">Legal & Policies</h1>
+          <p className="legal-p">
+            Transparency is key to our relationship with you. Below you will find links to our important legal documents.
+          </p>
         </div>
-        <div style={{height: 100, width: '100%'}}></div>
+        
+        <div className="legal-cards-container">
+          <div className="legal-card">
+            <h3 className="legal-card-title">Privacy Policy</h3>
+            <p className="legal-card-text">Learn how we collect, use, and protect your personal information.</p>
+            <Link to="/privacy" className="legal-btn">Read Privacy Policy</Link>
+          </div>
+          
+          <div className="legal-card">
+            <h3 className="legal-card-title">Terms of Service</h3>
+            <p className="legal-card-text">Understand the terms and conditions that govern your use of our service.</p>
+            <Link to="/terms" className="legal-btn">Read Terms of Service</Link>
+          </div>
+          
+          <div className="legal-card">
+            <h3 className="legal-card-title">Refund Policy</h3>
+            <p className="legal-card-text">Review our refund and satisfaction guarantee policies.</p>
+            <Link to="/refund" className="legal-btn">Read Refund Policy</Link>
+          </div>
+        </div>
       </div>
     </main>
   );

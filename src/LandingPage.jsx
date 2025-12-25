@@ -124,14 +124,12 @@ export default function LandingPage() {
                 <div className="hero-actions">
                   <button
                     className="btn-primary"
-                    onClick={startDownload}
-                    disabled={downloadStarted || downloadDisabled}
+                    onClick={() => window.location.href = '/download'}
                     style={{ opacity: downloadStarted || downloadDisabled ? 0.7 : 1 }}
                   >
-                    <FaWindows style={{ marginRight: 8, fontSize: 18 }} />
                     Download
                   </button>
-                  <button className="btn-secondary" onClick={() => scrollToId("features")}>
+                  <button className="btn-primary" onClick={() => scrollToId("features")}>
                     Learn more
                   </button>
                 </div>

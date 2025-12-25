@@ -29,7 +29,7 @@ export default function HowToUse() {
                 <div className="step-number">1</div>
                 <h3>Download & Install</h3>
                 <p>Download the iModule desktop application for Windows, Mac, or Linux</p>
-                <button className="download-btn">
+                <button className="download-btn" onClick={() => window.location.href = '/download'}>
                   <FaDownload /> Download Now
                 </button>
               </div>
@@ -174,7 +174,7 @@ export default function HowToUse() {
             <h2>Ready to Ace Your Interviews?</h2>
             <p>Download iModule and start preparing today</p>
             <div className="cta-buttons">
-              <button className="btn-primary">
+              <button className="btn-primary" onClick={() => window.location.href = '/download'}>
                 <FaDownload /> Download App
               </button>
               <button className="btn-secondary" onClick={() => window.location.href = '/#pricing'}>
