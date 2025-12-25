@@ -12,6 +12,7 @@ import Refund from "./pages/Refund";
 import Terms from "./pages/Terms";
 import Policies from "./pages/Policies";
 import ContactInfo from "./pages/ContactInfo";
+import HowToUse from "./pages/HowToUse";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/download" element={<DownloadRedirect />} />
           <Route path="/download/windows" element={<DownloadRedirect />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact-info" element={<ContactInfo />} />
           <Route path="/policies" element={<Policies />} />

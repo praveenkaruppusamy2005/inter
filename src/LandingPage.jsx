@@ -1,5 +1,4 @@
 import React from 'react';
-import PopupModal from './components/PopupModal';
 import { useLocation } from 'react-router-dom';
 import { MdCheckCircle, MdCode, MdGraphicEq, MdPhoneIphone, MdSecurity, MdSpeed, MdSupportAgent } from "react-icons/md";
 import { FaWindows } from "react-icons/fa";
@@ -12,8 +11,7 @@ export default function LandingPage() {
   const location = useLocation();
   const windowsDownloadUrl =
     import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
-    "https://www.dropbox.com/scl/fi/vp70jbw7txvp1ggonquh9/imodule-Setup-1.0.13.exe?rlkey=zzcop6gw4uezvn4mui12k54lo&st=3gvojkio&dl=1";
-  const [modalOpen, setModalOpen] = React.useState(false);
+    "https://www.dropbox.com/scl/fi/cermrh7nz3vlahsxvr5n2/imodule-setup.exe?rlkey=oq80g7hohpj9j2tg88g8zpwse&st=g8xze5gh&dl=1";
   const [downloadStarted, setDownloadStarted] = React.useState(false);
   const [downloadDisabled, setDownloadDisabled] = React.useState(false);
   const downloadInFlightRef = React.useRef(false);
@@ -21,15 +19,11 @@ export default function LandingPage() {
 
   const startDownload = () => {
     if (downloadInFlightRef.current || downloadDisabled) return;
-    setModalOpen(true);
-  };
-
-  const handleDownloadConfirm = () => {
     downloadInFlightRef.current = true;
     setDownloadStarted(true);
     setDownloadDisabled(true);
-    setModalOpen(false);
     window.open(windowsDownloadUrl, "_blank", "noopener,noreferrer");
+
     if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
     resetTimerRef.current = window.setTimeout(() => {
       downloadInFlightRef.current = false;
@@ -54,32 +48,6 @@ export default function LandingPage() {
 
   return (
     <>
-      <PopupModal open={modalOpen} onClose={() => setModalOpen(false)} title="Download InterView Pro">
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-          <FaWindows size={40} color="#1976d2" style={{ marginBottom: 8 }} />
-          <div style={{ fontSize: 16, fontWeight: 500, textAlign: 'center' }}>
-            Download the Windows app to get started with InterView Pro.<br />
-            Would you like to download now?
-          </div>
-          <div style={{ display: 'flex', gap: 12, marginTop: 8 }}>
-            <button
-              className="btn-primary"
-              onClick={handleDownloadConfirm}
-              style={{ minWidth: 100 }}
-              disabled={downloadDisabled}
-            >
-              Download
-            </button>
-            <button
-              className="btn-secondary"
-              onClick={() => setModalOpen(false)}
-              style={{ minWidth: 100 }}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </PopupModal>
       {downloadStarted && (
         <div style={{
           position: 'fixed',
@@ -150,7 +118,7 @@ export default function LandingPage() {
               <div>
                 <h1 className="hero-title">Nail your job interview with your interview AI copilot</h1>
                 <p className="hero-subtitle">
-                  InterView Pro helps you prepare and practice for interviews. It can transcribe your calls and generate study-ready answer suggestions — we do not provide live support during interviews.
+                  InterView Pro, your intelligent interview AI assistant, listens to your Zoom, Google Meet, and Teams calls, delivering instant answers.
                 </p>
                 
                 <div className="hero-actions">
@@ -189,25 +157,26 @@ export default function LandingPage() {
           <div className="marketing-container">
             <h2 className="section-title">About InterView Pro</h2>
             <p className="section-subtitle">
-              InterView Pro provides comprehensive interview preparation assistance. Use the desktop app to practice your responses, review transcriptions of your mock sessions, and boost your confidence before the real deal.
+              This web application is the official landing site for imodule. It helps you understand features, pricing, and policies, and it
+              provides a direct Windows download for the desktop app.
             </p>
             <div className="card-grid-3">
               <div className="card">
                 <div className="card-title">What You Get</div>
                 <p className="card-text">
-                  Preparation help for coding rounds, system design, behavioral questions, and situational prompts.
+                  Real-time help for coding rounds, system design, and engineering interview questions.
                 </p>
               </div>
               <div className="card">
                 <div className="card-title">How It Works</div>
                 <p className="card-text">
-                  Download the Windows app, record your practice sessions, and review AI-generated insights to improve your performance.
+                  Download the Windows app, start an interview call, and enable the assistant for discreet help while you stay focused.
                 </p>
               </div>
               <div className="card">
                 <div className="card-title">Support</div>
                 <p className="card-text">
-                  Contact us at 9159460443 or interviewpro4@gmail.com. See Pricing and Policies for details.
+                  Find contact details and policy information anytime from the header or footer links.
                 </p>
               </div>
             </div>
@@ -228,13 +197,13 @@ export default function LandingPage() {
               />
               <StepCard
                 icon={<MdGraphicEq size={22} />}
-                title="2. Enable App Features"
-                text="Turn on practice and transcription features in the desktop app."
+                title="2. Activate the Assistant"
+                text="Start listening and let AI track your technical interview in real time."
               />
               <StepCard
                 icon={<MdSupportAgent size={22} />}
-                title="3. Generate Suggestions"
-                text="Create concise, speakable answer suggestions for preparation."
+                title="3. Get Instant Support"
+                text="Receive discreet guidance for coding and system design questions."
               />
             </div>
           </div>
@@ -242,9 +211,9 @@ export default function LandingPage() {
 
         <section className="section" id="platforms">
           <div className="marketing-container">
-            <h2 className="section-title">Works with popular interview platforms</h2>
+            <h2 className="section-title">Invisible assistance on every interview platform</h2>
             <p className="section-subtitle">
-              Integrates into your workflow for preparation, transcription, and review.
+              Works across interview call tools and common coding platforms so you can stay focused.
             </p>
             <div className="platform-row">
               <PlatformTile label="Google Meet" icon={<SiGooglemeet size={20} color="#34a853" />} />

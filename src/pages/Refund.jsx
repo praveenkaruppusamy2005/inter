@@ -5,18 +5,26 @@ export default function Refund() {
     <main className="legal-main">
       <div className="legal-wrap">
         <h1 className="legal-h1">Refund Policy</h1>
-        <p className="legal-p">Last updated: December 2025</p>
-        <h2 className="legal-h2">No Refunds</h2>
+        <p className="legal-p">Last updated: December 2024</p>
+        
+        <h2 className="legal-h2">1. Satisfaction Guarantee</h2>
         <p className="legal-p">
-          All services are provided on an hourly basis and billed at ₹100 INR per hour. Due to the nature of the service, all payments are final and non-refundable once a session has begun or been completed.
+          We want you to be completely satisfied with our services. If you are not satisfied, please contact us within 14 days of your purchase.
         </p>
-        <h2 className="legal-h2">Rescheduling</h2>
+
+        <h2 className="legal-h2">2. Eligibility for Refunds</h2>
         <p className="legal-p">
-          If you need to reschedule, please contact us at least 24 hours in advance. We will make reasonable efforts to accommodate a new time slot subject to availability. No refunds are issued for cancellations or missed sessions.
+          To be eligible for a refund, you must submit a request to our support team with details of your purchase and the reason for the refund request. We review each request on a case-by-case basis.
         </p>
-        <h2 className="legal-h2">Contact</h2>
+
+        <h2 className="legal-h2">3. Non-refundable Items</h2>
         <p className="legal-p">
-          For questions, contact us at <b>9159460443</b> or <b>interviewpro4@gmail.com</b>.
+          Certain services or subscription periods may be non-refundable. Please check the specific terms at the time of purchase.
+        </p>
+
+        <h2 className="legal-h2">4. Processing Time</h2>
+        <p className="legal-p">
+          Refunds are typically processed within 5-10 business days depending on your payment provider.
         </p>
       </div>
     </main>
