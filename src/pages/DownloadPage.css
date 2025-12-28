@@ -1,6 +1,7 @@
 .download-page {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+  background: #ffffff;
+  padding-top: 100px;
 }
 
 /* Hero Section */
@@ -31,7 +32,7 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 16px;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .download-hero p {
@@ -43,8 +44,11 @@
 /* Main Content */
 .download-content {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
+  margin: 20px auto;
+  padding: 40px 20px;
+  border: 3px solid #000;
+  border-radius: 30px;
+  background: #ffffff;
 }
 
 .download-section h2 {
@@ -53,7 +57,7 @@
   margin-bottom: 40px;
   color: #202124;
   text-align: center;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 /* Download Grid */
@@ -71,7 +75,8 @@
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #e0e0e0;
+  border: 3px solid #000;
+  border-bottom: 6px solid #000;
   position: relative;
   overflow: hidden;
 }
@@ -113,7 +118,7 @@
   font-weight: 600;
   margin-bottom: 12px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
   transition: transform 0.3s ease;
 }
 
@@ -133,26 +138,19 @@
 }
 
 /* Windows Card */
-
-
 .windows-card .platform-icon svg {
-  color: #0078d7;
-  filter: drop-shadow(0 0 10px rgba(0, 120, 215, 0.2));
+  color: #000000;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2));
 }
 
 /* Mac Card */
-
-
 .mac-card .platform-icon svg {
-  color: #a2aaad;
- 
+  color: #000000;
 }
 
 /* Linux Card */
-
 .linux-card .platform-icon svg {
-  color: #f66a0a;
-
+  color: #000000;
 }
 
 /* Coming Soon Overlay */
@@ -178,58 +176,47 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 16px 32px;
+  border: 1px solid #000;
+  border-bottom: 7px solid #000;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 16px;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
   min-width: 180px;
+  background: #ffffff;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .download-btn svg {
   margin-right: 4px;
 }
 
-.windows-btn {
-  background: #0078d7;
-  color: white;
-}
-
-.windows-btn:hover {
-  background: #106ebe;
+.download-btn:hover {
+  background: #008a66;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 120, 215, 0.3);
-}
-
-.mac-btn {
-  background: #a2aaad;
-  color: white;
-}
-
-.mac-btn:hover {
-  background: #8a9296;
-}
-
-.linux-btn {
-  background: #f66a0a;
-  color: white;
-}
-
-.linux-btn:hover {
-  background: #d35400;
+  box-shadow: 0 8px 25px rgba(0, 168, 120, 0.3);
 }
 
 .download-btn.disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  background: #f5f5f5;
+  color: #999999;
+  border-color: #cccccc;
 }
 
 .download-btn.disabled:hover {
   transform: none;
   box-shadow: none;
+  background: #f5f5f5;
+  color: #999999;
 }
 
 /* Features Section */
@@ -239,7 +226,7 @@
   margin-bottom: 40px;
   color: #202124;
   text-align: center;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .features-grid {
@@ -256,7 +243,9 @@
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #000;
+  border-bottom:4px solid black;
+  border-right:5px solid black;
 }
 
 .feature-item:hover {
@@ -266,6 +255,7 @@
 .feature-icon {
   font-size: 36px;
   margin-bottom: 16px;
+  color: #000000;
 }
 
 .feature-item h3 {
@@ -273,7 +263,7 @@
   font-weight: 600;
   margin-bottom: 12px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .feature-item p {
@@ -289,7 +279,7 @@
   margin-bottom: 40px;
   color: #202124;
   text-align: center;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .requirements-content {
@@ -297,7 +287,7 @@
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e0e0e0;
+  border: 3px solid #000;
 }
 
 .requirements-content h3 {
@@ -305,7 +295,7 @@
   font-weight: 600;
   margin-bottom: 16px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .requirements-content ul {

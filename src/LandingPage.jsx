@@ -1,7 +1,6 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { MdCheckCircle, MdCode, MdGraphicEq, MdPhoneIphone, MdSecurity, MdSpeed, MdSupportAgent } from "react-icons/md";
-import { FaWindows } from "react-icons/fa";
+import { useLocation, useNavigate } from 'react-router-dom';
+import { MdCode, MdGraphicEq, MdPhoneIphone, MdSupportAgent } from "react-icons/md";
 import { PiMicrosoftTeamsLogoBold } from "react-icons/pi";
 import { SiAmazon, SiGooglemeet, SiHackerrank, SiZoom } from "react-icons/si";
 import an from './assets/animation.mp4';
@@ -9,27 +8,10 @@ import programmers from './assets/make.jpg';
 
 export default function LandingPage() {
   const location = useLocation();
-  const windowsDownloadUrl =
-    import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
-    "https://www.dropbox.com/scl/fi/cermrh7nz3vlahsxvr5n2/imodule-setup.exe?rlkey=oq80g7hohpj9j2tg88g8zpwse&st=g8xze5gh&dl=1";
-  const [downloadStarted, setDownloadStarted] = React.useState(false);
-  const [downloadDisabled, setDownloadDisabled] = React.useState(false);
-  const downloadInFlightRef = React.useRef(false);
-  const resetTimerRef = React.useRef(null);
+  const navigate = useNavigate();
 
-  const startDownload = () => {
-    if (downloadInFlightRef.current || downloadDisabled) return;
-    downloadInFlightRef.current = true;
-    setDownloadStarted(true);
-    setDownloadDisabled(true);
-    window.open(windowsDownloadUrl, "_blank", "noopener,noreferrer");
-
-    if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
-    resetTimerRef.current = window.setTimeout(() => {
-      downloadInFlightRef.current = false;
-      setDownloadDisabled(false);
-      resetTimerRef.current = null;
-    }, 4000);
+  const goToDownloadPage = () => {
+    navigate('/download');
   };
 
   React.useEffect(() => {
@@ -40,114 +22,43 @@ export default function LandingPage() {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [location.hash]);
 
-  const scrollToId = (id) => {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <>
-      {downloadStarted && (
-        <div style={{
-          position: 'fixed',
-          top: 90,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 2000,
-          width: 'min(760px, calc(100% - 32px))',
-          background: 'rgba(32, 33, 36, 0.92)',
-          color: '#fff',
-          borderRadius: 14,
-          padding: '12px 14px',
-          boxShadow: '0 10px 28px rgba(0,0,0,0.25)',
-          border: '1px solid rgba(255,255,255,0.12)',
-          backdropFilter: 'blur(10px)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 12
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
-            <div style={{
-              width: 36,
-              height: 36,
-              borderRadius: 10,
-              background: 'rgba(26,115,232,0.22)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flex: '0 0 auto'
-            }}>
-              <FaWindows size={18} color="#8ab4f8" />
-            </div>
-            <div style={{ minWidth: 0 }}>
-              <div style={{ fontWeight: 700, fontSize: 14, lineHeight: 1.2 }}>Download started</div>
-              <div style={{ fontSize: 12, opacity: 0.9, lineHeight: 1.2 }}>
-                If it didn’t start,{" "}
-                <a href={windowsDownloadUrl} target="_blank" rel="noreferrer" style={{ color: '#8ab4f8', fontWeight: 700 }}>
-                  click here
-                </a>
-                .
-              </div>
-            </div>
-          </div>
-          <button onClick={() => {
-            setDownloadStarted(false);
-            downloadInFlightRef.current = false;
-            if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
-            resetTimerRef.current = null;
-          }} style={{
-            border: '1px solid rgba(255,255,255,0.16)',
-            background: 'transparent',
-            color: '#fff',
-            borderRadius: 10,
-            padding: '8px 10px',
-            cursor: 'pointer',
-            fontWeight: 700
-          }}>
-            Close
-          </button>
-        </div>
-      )}
-
       <main>
-        <section className="hero" id="top">
-          <div className="marketing-container">
-            <div className="hero-grid">
-              <div>
-                <h1 className="hero-title">Nail your job interview with your interview AI copilot</h1>
-                <p className="hero-subtitle">
-                  InterView Pro, your intelligent interview AI assistant, listens to your Zoom, Google Meet, and Teams calls, delivering instant answers.
-                </p>
-                
-                <div className="hero-actions">
-                  <button
-                    className="btn-primary"
-                    onClick={() => window.location.href = '/download'}
-                    style={{ opacity: downloadStarted || downloadDisabled ? 0.7 : 1 }}
-                  >
-                    Download
-                  </button>
-                  <button className="btn-primary" onClick={() => scrollToId("features")}>
-                    Learn more
-                  </button>
+        {/* Hero Section with Mobile Wallpaper Background */}
+        <section className="hero-wallpaper" id="top">
+          <div className="hero-wallpaper-content">
+            <div className="hero-text-section">
+              <h1 className="hero-main-title">
+                Nail your job interview<br />
+                with your interview AI copilot<br />
+              </h1>
+              <p className="hero-main-subtitle">
+                Interview Hammer, your intelligent interview AI assistant, listens to your Zoom, Google Meet, and Teams calls, delivering instant answers.
+              </p>
+              <button className="hero-download-btn" onClick={goToDownloadPage}>
+                DOWNLOAD INTERVIEW PRO
+              </button>
+              
+            </div>
+            <div className="hero-phone-section">
+              <div className="phone-mockup">
+                <div className="phone-screen">
+                  <video src={an} autoPlay loop muted className="phone-video" />
                 </div>
-                <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 16 }}>
-                  <span className="rating-badge">
-                    <MdSecurity />
-                    Secure & Local
-                  </span>
-                  <span className="rating-badge">
-                    <MdSpeed />
-                    Low Latency
-                  </span>
-                </div>
-              </div>
-              <div className="hero-media">
-                <video src={an} autoPlay loop muted className="hero-video" />
               </div>
             </div>
+            
+          </div>
+        </section>
+
+       
+        <section className="secondary-hero">
+          <div className="marketing-container">
+            <h2 className="secondary-hero-title">
+              Conquer Your Interviews<br />
+              <span className="highlight-text"> the Effortless Way</span>.
+            </h2>
           </div>
         </section>
 
@@ -181,28 +92,39 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section className="section" id="features">
+        <section className="section conquer-section" id="features">
           <div className="marketing-container">
             <h2 className="section-title">Conquer Technical Interviews the Effortless Way</h2>
             <p className="section-subtitle">
               Built for software developer interviews: get fast, structured support without breaking your flow.
             </p>
-            <div className="card-grid-3">
-              <StepCard
-                icon={<MdPhoneIphone size={22} />}
-                title="1. Open the App"
-                text="Launch imodule and get ready in seconds."
-              />
-              <StepCard
-                icon={<MdGraphicEq size={22} />}
-                title="2. Activate the Assistant"
-                text="Start listening and let AI track your technical interview in real time."
-              />
-              <StepCard
-                icon={<MdSupportAgent size={22} />}
-                title="3. Get Instant Support"
-                text="Receive discreet guidance for coding and system design questions."
-              />
+            <div className="conquer-steps">
+              <div className="conquer-step-main">
+                <div>
+                  <div className="conquer-step-number">1</div>
+                  <h3 className="conquer-step-title">Open the App</h3>
+                  <p className="conquer-step-text">Launch imodule and get ready in seconds. Log in and let InterView Pro do the rest</p>
+                </div>
+                <button className="conquer-step-button" onClick={goToDownloadPage}>
+                  Download InterView Pro
+                </button>
+              </div>
+              <div className="conquer-step-secondary">
+                <div className="conquer-step-card">
+                  <div className="conquer-step-number">2</div>
+                  <div className="conquer-step-content">
+                    <h3 className="conquer-step-title">Activate the Assistant</h3>
+                    <p className="conquer-step-text">Start listening and let AI track your technical interview in real time.</p>
+                  </div>
+                </div>
+                <div className="conquer-step-card">
+                  <div className="conquer-step-number">3</div>
+                  <div className="conquer-step-content">
+                    <h3 className="conquer-step-title">Get Instant Support</h3>
+                    <p className="conquer-step-text">Receive discreet guidance for coding and system design questions.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -214,12 +136,12 @@ export default function LandingPage() {
               Works across interview call tools and common coding platforms so you can stay focused.
             </p>
             <div className="platform-row">
-              <PlatformTile label="Google Meet" icon={<SiGooglemeet size={20} color="#34a853" />} />
-              <PlatformTile label="Amazon Chime" icon={<SiAmazon size={20} color="#ff9900" />} />
-              <PlatformTile label="Zoom" icon={<SiZoom size={20} color="#2d8cff" />} />
-              <PlatformTile label="Microsoft Teams" icon={<PiMicrosoftTeamsLogoBold size={20} color="#6264A7" />} />
-              <PlatformTile label="HackerRank" icon={<SiHackerrank size={20} color="#00EA64" />} />
-              <PlatformTile label="CoderPad" icon={<MdCode size={20} color="#0f172a" />} />
+              <PlatformTile label="Google Meet" icon={<SiGooglemeet size={20} color="#000000" />} />
+              <PlatformTile label="Amazon Chime" icon={<SiAmazon size={20} color="#000000" />} />
+              <PlatformTile label="Zoom" icon={<SiZoom size={20} color="#000000" />} />
+              <PlatformTile label="Microsoft Teams" icon={<PiMicrosoftTeamsLogoBold size={20} color="#000000" />} />
+              <PlatformTile label="HackerRank" icon={<SiHackerrank size={20} color="#000000" />} />
+              <PlatformTile label="CoderPad" icon={<MdCode size={20} color="#000000" />} />
             </div>
           </div>
         </section>
@@ -232,7 +154,7 @@ export default function LandingPage() {
                 <img src={programmers} alt="Built for developers" />
               </div>
               <div>
-                <p style={{ color: '#4f46e5', fontWeight: 600, marginBottom: 20 }}>From technical assessments to case analyses</p>
+                <p style={{ color: '#00A878', fontWeight: 600, marginBottom: 20 }}>From technical assessments to case analyses</p>
                 
                 <div className="bullet">
                   <div className="bullet-title">For Developers</div>

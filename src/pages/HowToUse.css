@@ -5,7 +5,7 @@
 
 /* Hero Section */
 .how-to-hero {
-  background: linear-gradient(135deg, #ff7700 0%, #ffb366 100%);
+  background: linear-gradient(135deg, #1db954 0%, #4de174 100%);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -31,7 +31,7 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 16px;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .how-to-hero p {
@@ -59,11 +59,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .how-to-section h2 svg {
-  color: #ff7700;
+  color: #1db954;
 }
 
 /* Steps Grid */
@@ -90,7 +90,7 @@
 .step-number {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #ff7700 0%, #ffb366 100%);
+  background: linear-gradient(135deg, #1db954 0%, #4de174 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -106,7 +106,7 @@
   font-weight: 600;
   margin-bottom: 12px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .step-card p {
@@ -116,7 +116,7 @@
 }
 
 .download-btn {
-  background: #ff7700;
+  background: #1db954;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -130,7 +130,7 @@
 }
 
 .download-btn:hover {
-  background: #ff8800;
+  background: #1ed760;
 }
 
 /* Features Grid */
@@ -157,7 +157,7 @@
 
 .feature-icon {
   font-size: 48px;
-  color: #ff7700;
+  color: #1db954;
   margin-bottom: 20px;
 }
 
@@ -166,7 +166,7 @@
   font-weight: 600;
   margin-bottom: 12px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .feature-card p {
@@ -224,7 +224,7 @@
   font-size: 18px;
   color: #202124;
   margin-bottom: 4px;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .shortcut-desc p {
@@ -248,7 +248,7 @@
   padding: 32px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid #ff7700;
+  border-left: 4px solid #1db954;
   transition: transform 0.3s;
 }
 
@@ -259,7 +259,7 @@
 .guide-number {
   width: 40px;
   height: 40px;
-  background: #ff7700;
+  background: #1db954;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -275,7 +275,7 @@
   font-weight: 600;
   margin-bottom: 8px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .guide-text p {
@@ -311,13 +311,13 @@
 }
 
 .tip-card:hover {
-  border-color: #ff7700;
+  border-color: #1db954;
   transform: scale(1.02);
 }
 
 .tip-icon {
   font-size: 32px;
-  color: #ff7700;
+  color: #1db954;
   margin-bottom: 12px;
 }
 
@@ -326,7 +326,7 @@
   font-weight: 600;
   margin-bottom: 8px;
   color: #202124;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .tip-card p {
@@ -340,7 +340,7 @@
 .how-to-cta {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(135deg, #ff7700 0%, #ffb366 100%);
+  background: linear-gradient(135deg, #1db954 0%, #4de174 100%);
   border-radius: 20px;
   color: white;
   margin-top: 80px;
@@ -351,13 +351,362 @@
   font-weight: 700;
   margin-bottom: 16px;
   color: white;
-  font-family: 'GT', system-ui, sans-serif;
+  font-family: "gt", system-ui, sans-serif;
 }
 
 .how-to-cta > p {
   font-size: 18px;
   opacity: 0.95;
+}
+/* How To Use Page Styles */
+.how-to-use-page {
+  font-family: "gt", sans-serif;
+  color: #000000;
+  background: #ffffff;
+}
+
+.how-to-hero {
+  background: #ffffff;
+  padding: 120px 20px 80px;
+  text-align: center;
+  border-bottom: 6px solid #000000;
+}
+
+.how-to-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-icon {
+  font-size: 64px;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.how-to-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.how-to-hero p {
+  font-size: 20px;
+  color: #475569;
+  font-family: "gt", sans-serif;
+}
+
+.how-to-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.how-to-section {
+  margin-bottom: 80px;
+  padding: 40px;
+  border: none;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.how-to-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "gt", sans-serif;
+}
+
+.how-to-section h2 svg {
+  color: #000000;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.step-card {
+  padding: 32px;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  font-family: "gt", sans-serif;
+}
+
+.step-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.step-card p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: "gt", sans-serif;
+}
+
+.download-btn {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s ease;
+  font-family: "gt", sans-serif;
+}
+
+.download-btn:hover {
+  background: #333333;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  padding: 32px;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-icon {
+  font-size: 48px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  font-family: "gt", sans-serif;
+}
+
+/* Shortcuts */
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.shortcut-keys {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 200px;
+}
+
+.shortcut-keys kbd {
+  background: #f7f8f8;
+  color: #000000;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "gt", sans-serif;
+}
+
+.shortcut-desc strong {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  display: block;
+  margin-bottom: 4px;
+  font-family: "gt", sans-serif;
+}
+
+.shortcut-desc p {
+  font-size: 16px;
+  color: #475569;
+  margin: 0;
+  font-family: "gt", sans-serif;
+}
+
+/* Interview Guide */
+.guide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.guide-step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.guide-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: "gt", sans-serif;
+}
+
+.guide-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.guide-text p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "gt", sans-serif;
+}
+
+.guide-text kbd {
+  background: #f7f8f8;
+  color: #000000;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "gt", sans-serif;
+}
+
+/* Tips Grid */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.tip-card {
+  padding: 32px;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-4px);
+}
+
+.tip-icon {
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 16px;
+}
+
+.tip-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.tip-card p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  font-family: "gt", sans-serif;
+}
+
+/* CTA Section */
+.how-to-cta {
+  text-align: center;
+  padding: 60px 40px;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.how-to-cta h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #000000;
+  font-family: "gt", sans-serif;
+}
+
+.how-to-cta p {
+  font-size: 18px;
+  color: #475569;
   margin-bottom: 32px;
+  font-family: "gt", sans-serif;
 }
 
 .cta-buttons {
@@ -368,41 +717,40 @@
 }
 
 .btn-primary {
-  background: white;
-  color: #ff7700;
-  border: none;
-  padding: 14px 32px;
-  border-radius: 10px;
+  background: #000000;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  font-family: "gt", sans-serif;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #333333;
 }
 
 .btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 14px 32px;
-  border-radius: 10px;
+  background: #f7f8f8;
+  color: #000000;
+  padding: 16px 32px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
+  transition: all 0.2s ease;
+  font-family: "gt", sans-serif;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
+  background: #f8f9fa;
 }
 
 /* Responsive */
@@ -424,6 +772,16 @@
   .shortcut-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
+  }
+
+  .shortcut-keys {
+    min-width: auto;
+  }
+
+  .guide-step {
+    flex-direction: column;
+    gap: 16px;
   }
 
   .cta-buttons {
@@ -436,5 +794,13 @@
     width: 100%;
     max-width: 300px;
     justify-content: center;
+  }
+
+  .how-to-section {
+    padding: 24px;
+  }
+
+  .how-to-content {
+    padding: 40px 20px;
   }
 }

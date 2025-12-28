@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/Screen.png';
 
+import "../style.css"
 export default function Header() {
   const location = useLocation();
   const [showPoliciesDropdown, setShowPoliciesDropdown] = useState(false);
@@ -15,7 +16,7 @@ export default function Header() {
     <header className="site-header">
       <div className="marketing-container">
         <nav className="nav-inner">
-          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
             <div className="nav-left">
               <img src={logo} alt="Logo" style={{ width: 50, height: 50, objectFit: 'contain', display: 'block' }} />
             </div>
@@ -58,7 +59,9 @@ export default function Header() {
             <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact Us</Link>
           </div>
 
-          <div style={{ minWidth: 180 }} />
+          <div className="nav-right">
+           
+          </div>
         </nav>
       </div>
     </header>

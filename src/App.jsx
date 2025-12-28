@@ -15,11 +15,14 @@ import ContactInfo from "./pages/ContactInfo";
 import HowToUse from "./pages/HowToUse";
 import DownloadPage from "./pages/DownloadPage";
 import PaymentComplete from "./pages/PaymentComplete";
+import PaymentCancelled from "./pages/PaymentCancelled";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Standalone route without header/footer */}
+        <Route path="/payment-complete" element={<PaymentComplete />} />
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/download" element={<DownloadPage />} />
@@ -32,7 +35,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/refund" element={<Refund />} />
-          <Route path="/payment-complete" element={<PaymentComplete />} />
+          <Route path="/payment-cancelled" element={<PaymentCancelled />} />
           <Route path="*" element={<LandingPage />} />
         </Route>
       </Routes>
