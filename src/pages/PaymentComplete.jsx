@@ -271,23 +271,6 @@ export default function PaymentComplete() {
             }}>
               No charges have been made to your account.
             </p>
-            
-            <button
-              onClick={() => window.close()}
-              style={{
-                background: '#000000',
-                color: '#ffffff',
-                border: '2px solid #000000',
-                borderRadius: '12px',
-                padding: '14px 32px',
-                fontSize: '16px',
-                fontWeight: '700',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              Close Window
-            </button>
           </>
         )}
 
