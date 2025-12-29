@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import paymentSuccessAnimation from '../assets/Payment Successful Animation.json';
+import worriedManAnimation from '../assets/Worried Man.json';
 
 export default function PaymentComplete() {
   const [searchParams] = useSearchParams();
@@ -196,25 +197,30 @@ export default function PaymentComplete() {
               />
             </div>
             
-            <h1 style={{
-              fontSize: '32px',
-              fontWeight: '900',
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.5px'
-            }}>
-              Payment Successful
+            <h1 style={{ fontSize: '32px', fontWeight: '900', color: '#000000', marginBottom: '16px', letterSpacing: '-0.5px' }}>
+              Pro Unlocked
             </h1>
             
-            <p style={{
-              fontSize: '18px',
-              color: '#334155',
-              lineHeight: '1.6',
-              marginBottom: '32px',
-              fontWeight: '500'
-            }}>
-              Your Pro subscription has been activated successfully!
+            <p style={{ fontSize: '18px', color: '#334155', lineHeight: '1.6', marginBottom: '24px', fontWeight: '500' }}>
+              Your Pro subscription is active. Enjoy full access.
             </p>
+            <div style={{ border: '2px solid #000', borderBottom: '4px solid #000', borderRadius: '12px', padding: '18px', marginBottom: '32px', textAlign: 'left', background: '#fff' }}>
+              <h3 style={{ fontSize: '16px', fontWeight: '800', margin: '0 0 12px', color: '#000' }}>What’s Included</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: '10px' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1e293b', fontWeight: 600 }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#000', display: 'inline-block' }} />
+                  Unlimited AI chat messages
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1e293b', fontWeight: 600 }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#000', display: 'inline-block' }} />
+                  Real-time interview transcription
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1e293b', fontWeight: 600 }}>
+                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#000', display: 'inline-block' }} />
+                  Screenshot analysis
+                </li>
+              </ul>
+            </div>
             
             <button
               onClick={() => window.close()}
@@ -241,31 +247,11 @@ export default function PaymentComplete() {
           </>
         ) : (
           <>
-            <div style={{
-              width: '80px',
-              height: '80px',
-              background: '#000000',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 24px'
-            }}>
-              <svg
-                style={{ width: '40px', height: '40px', fill: '#ffffff' }}
-                viewBox="0 0 24 24"
-              >
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-              </svg>
+            <div style={{ width: '220px', height: '220px', margin: '0 auto 8px' }}>
+              <Lottie animationData={worriedManAnimation} loop autoplay style={{ width: '100%', height: '100%' }} />
             </div>
             
-            <h1 style={{
-              fontSize: '28px',
-              fontWeight: '900',
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.5px'
-            }}>
+            <h1 style={{ fontSize: '28px', fontWeight: '900', color: '#000000', marginBottom: '8px', letterSpacing: '-0.5px' }}>
               Payment Failed
             </h1>
             
@@ -306,7 +292,7 @@ export default function PaymentComplete() {
         )}
 
         {/* Debug info - only show in development */}
-        {process.env.NODE_ENV === 'development' && (
+        {import.meta.env.DEV && (
           <details style={{
             marginTop: '32px',
             textAlign: 'left',
