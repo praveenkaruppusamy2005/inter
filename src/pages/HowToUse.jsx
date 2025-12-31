@@ -47,6 +47,42 @@ export default function HowToUse() {
               </div>
             </section>
 
+            <section className="how-to-section">
+              <h2>During Interviews</h2>
+              <div className="steps-grid">
+                <div className="step-card">
+                  <div className="step-number">1</div>
+                  <h3>Open Your Meeting</h3>
+                  <p>Join the interview in your browser (Google Meet, Teams, Zoom)</p>
+                </div>
+                <div className="step-card">
+                  <div className="step-number">2</div>
+                  <h3>Hide the App</h3>
+                  <p>Press <kbd>Ctrl+Shift+W</kbd> to hide the window before you start sharing</p>
+                </div>
+                <div className="step-card">
+                  <div className="step-number">3</div>
+                  <h3>Select Share Source</h3>
+                  <p>Click Present/Share and choose Entire Screen, Window, or Tab</p>
+                </div>
+                <div className="step-card">
+                  <div className="step-number">4</div>
+                  <h3>Start Sharing</h3>
+                  <p>Click Share in the browser</p>
+                </div>
+                <div className="step-card">
+                  <div className="step-number">5</div>
+                  <h3>Show the App</h3>
+                  <p>Press <kbd>Ctrl+Shift+W</kbd> again to make the app visible while sharing</p>
+                </div>
+                <div className="step-card">
+                  <div className="step-number">6</div>
+                  <h3>End Share</h3>
+                  <p>Stop sharing when done; press <kbd>Ctrl+Shift+W</kbd> to hide again if needed</p>
+                </div>
+              </div>
+            </section>
+
             {/* Key Features */}
             <section className="how-to-section features-section">
               <h2>Key Features</h2>
@@ -69,7 +105,7 @@ export default function HowToUse() {
                 <div className="feature-card">
                   <FaBolt className="feature-icon" />
                   <h3>Stealth Mode</h3>
-                  <p>Hide the app window instantly with <kbd>Ctrl+Shift+W</kbd> during screen sharing interviews</p>
+                  <p>Before sharing your screen, press <kbd>Ctrl+Shift+W</kbd> to hide the app. After you click “Share” in the browser, press <kbd>Ctrl+Shift+W</kbd> again to show the app</p>
                 </div>
               </div>
             </section>
@@ -84,7 +120,7 @@ export default function HowToUse() {
                   </div>
                   <div className="shortcut-desc">
                     <strong>Hide/Show App</strong>
-                    <p>Instantly toggle app visibility during interviews</p>
+                    <p>Toggle visibility: hide before screen sharing; show after pressing Share</p>
                   </div>
                 </div>
                 <div className="shortcut-item">
@@ -116,28 +152,28 @@ export default function HowToUse() {
                   <div className="guide-number">1</div>
                   <div className="guide-text">
                     <h3>Pre-Interview Setup</h3>
-                    <p>Open Profile → Enable Interview Mode → Enter company name and paste job description</p>
+                    <p>Open Profile → Enable Interview Mode</p>
                   </div>
                 </div>
                 <div className="guide-step">
                   <div className="guide-number">2</div>
                   <div className="guide-text">
-                    <h3>Start Interview</h3>
-                    <p>App opens in compact mode with real-time transcription. Position it where you can glance easily</p>
+                    <h3>Hide Before Sharing</h3>
+                    <p>Press <kbd>Ctrl+Shift+W</kbd> to hide the app before opening the browser’s Share screen</p>
                   </div>
                 </div>
                 <div className="guide-step">
                   <div className="guide-number">3</div>
                   <div className="guide-text">
-                    <h3>Use Stealth Mode</h3>
-                    <p>Before sharing screen, press <kbd>Ctrl+Shift+W</kbd> to hide the window. Press again after screen share ends</p>
+                    <h3>Share Your Screen</h3>
+                    <p>In the browser, click <strong>Share</strong>. After sharing starts, press <kbd>Ctrl+Shift+W</kbd> again to show the app</p>
                   </div>
                 </div>
                 <div className="guide-step">
                   <div className="guide-number">4</div>
                   <div className="guide-text">
-                    <h3>Get AI Assistance</h3>
-                    <p>Type questions or press <kbd>Ctrl+Shift+S</kbd> to analyze screenshots of coding problems</p>
+                    <h3>Continue Interview</h3>
+                    <p>Use the app normally while your screen is shared</p>
                   </div>
                 </div>
               </div>
