@@ -82,8 +82,6 @@ export default function HowToUse() {
                 </div>
               </div>
             </section>
-
-            {/* Key Features */}
             <section className="how-to-section features-section">
               <h2>Key Features</h2>
               <div className="features-grid">
@@ -100,7 +98,7 @@ export default function HowToUse() {
                 <div className="feature-card">
                   <FaCamera className="feature-icon" />
                   <h3>Screenshot Analysis</h3>
-              <p>Press <kbd>Ctrl+Shift+S</kbd> to capture and analyze coding problems or diagrams instantly</p>
+              <p>Press <kbd>Ctrl+M</kbd> to capture and analyze coding problems or diagrams instantly</p>
                 </div>
                 <div className="feature-card">
                   <FaBolt className="feature-icon" />
