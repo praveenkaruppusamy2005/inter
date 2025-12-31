@@ -25,7 +25,7 @@ export default function DownloadPage() {
                 <h3>Windows</h3>
                 <p>Download for Windows 10/11</p>
                 <a 
-                  href="https://www.dropbox.com/scl/fi/vp70jbw7txvp1ggonquh9/imodule-Setup-1.0.13.exe?rlkey=zzcop6gw4uezvn4mui12k54lo&st=opljeiej&dl=1" 
+                  href="https://www.dropbox.com/scl/fi/7d5t6ea1ihzqaml92embp/imodule-Setup-1.0.17.exe?rlkey=82pc09ux8qxe3sprxkcltba1a&st=jzat6w1u&dl=0" 
                   className="download-btn windows-btn"
                   target="_blank"
                   rel="noopener noreferrer"
