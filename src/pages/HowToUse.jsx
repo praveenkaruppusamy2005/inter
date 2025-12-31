@@ -73,12 +73,12 @@ export default function HowToUse() {
                 <div className="step-card">
                   <div className="step-number">5</div>
                   <h3>Show the App</h3>
-                  <p>Press <kbd>Ctrl+Shift+W</kbd> again to make the app visible while sharing</p>
+                  <p>Press <kbd>Ctrl+M</kbd> again to make the app visible while sharing</p>
                 </div>
                 <div className="step-card">
                   <div className="step-number">6</div>
                   <h3>End Share</h3>
-                  <p>Stop sharing when done; press <kbd>Ctrl+Shift+W</kbd> to hide again if needed</p>
+                  <p>Stop sharing when done; press <kbd>Ctrl+M</kbd> to hide again if needed</p>
                 </div>
               </div>
             </section>
@@ -100,12 +100,12 @@ export default function HowToUse() {
                 <div className="feature-card">
                   <FaCamera className="feature-icon" />
                   <h3>Screenshot Analysis</h3>
-                  <p>Press <kbd>Ctrl+Shift+S</kbd> to capture and analyze coding problems or diagrams instantly</p>
+              <p>Press <kbd>Ctrl+Shift+S</kbd> to capture and analyze coding problems or diagrams instantly</p>
                 </div>
                 <div className="feature-card">
                   <FaBolt className="feature-icon" />
                   <h3>Stealth Mode</h3>
-                  <p>Before sharing your screen, press <kbd>Ctrl+Shift+W</kbd> to hide the app. After you click “Share” in the browser, press <kbd>Ctrl+Shift+W</kbd> again to show the app</p>
+              <p>Before sharing your screen, press <kbd>Ctrl+M</kbd> to hide the app. After you click “Share” in the browser, press <kbd>Ctrl+M</kbd> again to show the app</p>
                 </div>
               </div>
             </section>
@@ -116,7 +116,7 @@ export default function HowToUse() {
               <div className="shortcuts-list">
                 <div className="shortcut-item">
                   <div className="shortcut-keys">
-                    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd>
+                    <kbd>Ctrl</kbd> + <kbd>M</kbd>
                   </div>
                   <div className="shortcut-desc">
                     <strong>Hide/Show App</strong>
