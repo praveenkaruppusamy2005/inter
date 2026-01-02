@@ -58,7 +58,7 @@ export default function HowToUse() {
                 <div className="step-card">
                   <div className="step-number">2</div>
                   <h3>Hide the App</h3>
-                  <p>Press <kbd>Ctrl+Shift+W</kbd> to hide the window before you start sharing</p>
+                  <p>Press <kbd>Ctrl+M</kbd> to hide the window before you start sharing</p>
                 </div>
                 <div className="step-card">
                   <div className="step-number">3</div>
@@ -157,14 +157,14 @@ export default function HowToUse() {
                   <div className="guide-number">2</div>
                   <div className="guide-text">
                     <h3>Hide Before Sharing</h3>
-                    <p>Press <kbd>Ctrl+Shift+W</kbd> to hide the app before opening the browser’s Share screen</p>
+                    <p>Press <kbd>Ctrl+M</kbd> to hide the app before opening the browser’s Share screen</p>
                   </div>
                 </div>
                 <div className="guide-step">
                   <div className="guide-number">3</div>
                   <div className="guide-text">
                     <h3>Share Your Screen</h3>
-                    <p>In the browser, click <strong>Share</strong>. After sharing starts, press <kbd>Ctrl+Shift+W</kbd> again to show the app</p>
+                    <p>In the browser, click <strong>Share</strong>. After sharing starts, press <kbd>Ctrl+M</kbd> again to show the app</p>
                   </div>
                 </div>
                 <div className="guide-step">

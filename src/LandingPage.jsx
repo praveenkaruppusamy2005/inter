@@ -30,11 +30,10 @@ export default function LandingPage() {
           <div className="hero-wallpaper-content">
             <div className="hero-text-section">
               <h1 className="hero-main-title">
-                Nail your job interview<br />
-                with your interview AI copilot<br />
+                AI Interview Assistant for Zoom, Meet, and Coding Tests
               </h1>
               <p className="hero-main-subtitle">
-                Interview Hammer, your intelligent interview AI assistant, listens to your Zoom, Google Meet, and Teams calls, delivering instant answers.
+                Get real-time suggested answers during questions. Invisible when screen sharing on Zoom, Google Meet, Microsoft Teams, and coding platforms.
               </p>
               <button className="hero-download-btn" onClick={goToDownloadPage}>
                 DOWNLOAD INTERVIEW PRO
@@ -94,7 +93,7 @@ export default function LandingPage() {
 
         <section className="section conquer-section" id="features">
           <div className="marketing-container">
-            <h2 className="section-title">Conquer Technical Interviews the Effortless Way</h2>
+            <h2 className="section-title">Real-time AI answers during interviews</h2>
             <p className="section-subtitle">
               Built for software developer interviews: get fast, structured support without breaking your flow.
             </p>
@@ -131,7 +130,7 @@ export default function LandingPage() {
 
         <section className="section" id="platforms">
           <div className="marketing-container">
-            <h2 className="section-title">Invisible assistance on every interview platform</h2>
+            <h2 className="section-title">Works on Zoom, Google Meet, Teams, HackerRank, LeetCode</h2>
             <p className="section-subtitle">
               Works across interview call tools and common coding platforms so you can stay focused.
             </p>
@@ -148,7 +147,7 @@ export default function LandingPage() {
 
         <section className="section" id="developers">
           <div className="marketing-container">
-            <h2 className="section-title">Tailored Support for Every Profession.</h2>
+            <h2 className="section-title">Instant prep help and answer coaching</h2>
             <div className="split">
               <div className="image-panel">
                 <img src={programmers} alt="Built for developers" />

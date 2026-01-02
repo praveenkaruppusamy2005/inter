@@ -16,6 +16,8 @@ import HowToUse from "./pages/HowToUse";
 import DownloadPage from "./pages/DownloadPage";
 import PaymentComplete from "./pages/PaymentComplete";
 import PaymentCancelled from "./pages/PaymentCancelled";
+import Features from "./pages/Features";
+import UseCases from "./pages/UseCases";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/download" element={<DownloadPage />} />
           <Route path="/download/windows" element={<DownloadPage />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/features" element={<Features />} />
+          <Route path="/use-cases" element={<UseCases />} />
           <Route path="/how-to-use" element={<HowToUse />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact-info" element={<ContactInfo />} />

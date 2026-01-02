@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   try {
     // Forward the request to your backend
     const backendUrl = process.env.NODE_ENV === 'production' 
-      ? process.env.BACKEND_URL || 'https://interview-pro.azurewebsites.net' // Your Azure Web App URL
+      ? process.env.BACKEND_URL || 'https://inter-backend-lpmb.onrender.com'
       : 'http://localhost:60468';
     
     console.log('📡 Forwarding to backend:', `${backendUrl}/phonepe/status/${transactionId}`);
