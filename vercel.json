@@ -7,7 +7,7 @@
     },
     {
       "source": "/download/windows",
-      "destination": "https://www.dropbox.com/scl/fi/orosq3frex6f820176146/imodule-Setup-1.0.18.exe?rlkey=9pwk71sd4c2lrvzlkhfwz6wx6&st=gxc8an9u&dl=1",
+      "destination": "https://www.dropbox.com/scl/fi/dmllyo8geyfgzb0cdqz20/imodule-Setup-1.0.18.exe?rlkey=fz0i47o55ymzpju6ad1hyvzcs&st=vg0i67x3&dl=1",
       "permanent": false
     }
   ],
@@ -32,12 +32,6 @@
         { "key": "Content-Disposition", "value": "attachment" },
         { "key": "Content-Type", "value": "application/octet-stream" }
       ]
-    }
-  ],
-  "crons": [
-    {
-      "path": "/api/keepalive",
-      "schedule": "*/5 * * * *"
     }
   ]
 }
