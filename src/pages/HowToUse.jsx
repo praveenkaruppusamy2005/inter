@@ -58,7 +58,7 @@ export default function HowToUse() {
                 <div className="step-card">
                   <div className="step-number">2</div>
                   <h3>Hide the App</h3>
-                  <p>Press <kbd>Ctrl+W</kbd> to hide the window before you start sharing</p>
+                  <p>Press <kbd>Ctrl+M</kbd> to hide the window before you start sharing</p>
                 </div>
                 <div className="step-card">
                   <div className="step-number">3</div>
