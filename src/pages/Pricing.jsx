@@ -9,9 +9,9 @@ export default function Pricing() {
         <div style={{ maxWidth: 300, margin: '0 auto' }}>
        
         </div>
-        <h1 className="legal-h1" style={{ textAlign: 'center' }}>Simple, Transparent Pricing</h1>
+        <h1 className="legal-h1" style={{ textAlign: 'center' }}>Cheapest AI Interview Assistant - Simple Pricing</h1>
         <p className="legal-p" style={{ textAlign: 'center', maxWidth: 720, margin: '0 auto 28px' }}>
-          Choose the plan that works best for you
+          Most affordable AI interview tool. Just ₹999 for 5 days unlimited or ₹250/credit. Why pay more?
         </p>
 
         
@@ -98,11 +98,11 @@ export default function Pricing() {
               padding: '24px 20px',
               borderBottom: '5px solid #000000ff'
             }}>
-              <div className="card-title" style={{ fontSize: 18, color: '#000000ff' }}>10-Day Subscription</div>
+              <div className="card-title" style={{ fontSize: 18, color: '#000000ff' }}>5-Day Subscription</div>
               <div style={{ fontSize: 42, fontWeight: 900, margin: '12px 0', color: '#000000ff' }}>
-                ₹1000<span style={{ fontSize: 18, fontWeight: 500, color: '#666' }}>/10 days</span>
+                ₹999<span style={{ fontSize: 18, fontWeight: 500, color: '#666' }}>/5 days</span>
               </div>
-              <p className="card-text">Unlimited access to all pro features for 10 days.</p>
+              <p className="card-text">Unlimited access to all pro features for 5 days.</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '20px 0', lineHeight: 1.7 }}>
                 <li>✓ Unlimited AI chat & interviews</li>
                 <li>✓ Real-time transcription</li>
@@ -111,7 +111,7 @@ export default function Pricing() {
                
               </ul>
               <div style={{ display: 'flex', gap: 10 }}>
-                <p style={{ color: '#00A878', fontWeight: '600' }}>₹100 per day - Best value for intensive prep!</p>
+                <p style={{ color: '#00A878', fontWeight: '600' }}>₹200 per day - Best value for intensive prep!</p>
               </div>
             </div>
           )}

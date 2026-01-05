@@ -18,6 +18,7 @@ import PaymentComplete from "./pages/PaymentComplete";
 import PaymentCancelled from "./pages/PaymentCancelled";
 import Features from "./pages/Features";
 import UseCases from "./pages/UseCases";
+import InterviewHackGuide from "./pages/InterviewHackGuide";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/use-cases" element={<UseCases />} />
           <Route path="/how-to-use" element={<HowToUse />} />
+          <Route path="/interview-hack-guide" element={<InterviewHackGuide />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/contact-info" element={<ContactInfo />} />
           <Route path="/policies" element={<Policies />} />

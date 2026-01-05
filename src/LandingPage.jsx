@@ -30,10 +30,10 @@ export default function LandingPage() {
           <div className="hero-wallpaper-content">
             <div className="hero-text-section">
               <h1 className="hero-main-title">
-                AI Interview Assistant for Zoom, Meet, and Coding Tests
+                Cheapest AI Interview Assistant - Just ₹999 for 5 Days
               </h1>
               <p className="hero-main-subtitle">
-                Get real-time suggested answers during questions. Invisible when screen sharing on Zoom, Google Meet, Microsoft Teams, and coding platforms.
+                Most affordable AI interview tool. Get unlimited real-time answers during Zoom, Google Meet, Teams interviews and coding tests. Why pay more?
               </p>
               <button className="hero-download-btn" onClick={goToDownloadPage}>
                 DOWNLOAD INTERVIEW PRO
@@ -55,36 +55,36 @@ export default function LandingPage() {
         <section className="secondary-hero">
           <div className="marketing-container">
             <h2 className="secondary-hero-title">
-              Conquer Your Interviews<br />
-              <span className="highlight-text"> the Effortless Way</span>.
+              Most Affordable AI Interview Tool<br />
+              <span className="highlight-text">₹999 for 5 Days Unlimited</span>
             </h2>
           </div>
         </section>
 
         <section className="section" id="about">
           <div className="marketing-container">
-            <h2 className="section-title">About InterView Pro</h2>
+            <h2 className="section-title">Why Pay More? Get the Cheapest AI Interview Assistant</h2>
             <p className="section-subtitle">
-              This web application is the official landing site for imodule. It helps you understand features, pricing, and policies, and it
-              provides a direct Windows download for the desktop app.
+              Interview Pro offers the same powerful AI features as expensive tools, but at a fraction of the cost. 
+              Just ₹999 for 5 days unlimited access, or ₹250 per credit for flexible usage.
             </p>
             <div className="card-grid-3">
               <div className="card">
-                <div className="card-title">What You Get</div>
+                <div className="card-title">💰 Unbeatable Price</div>
                 <p className="card-text">
-                  Real-time help for coding rounds, system design, and engineering interview questions.
+                  ₹999 for 5 days unlimited or ₹250/credit. Compare that to competitors charging $50-100/month!
                 </p>
               </div>
               <div className="card">
-                <div className="card-title">How It Works</div>
+                <div className="card-title">🚀 Full Features</div>
                 <p className="card-text">
-                  Download the Windows app, start an interview call, and enable the assistant for discreet help while you stay focused.
+                  Real-time AI answers, transcription, screenshot analysis, stealth mode - everything you need.
                 </p>
               </div>
               <div className="card">
-                <div className="card-title">Support</div>
+                <div className="card-title">✅ No Compromise</div>
                 <p className="card-text">
-                  Find contact details and policy information anytime from the header or footer links.
+                  Cheapest doesn't mean cheap quality. Get premium AI assistance at budget-friendly prices.
                 </p>
               </div>
             </div>
