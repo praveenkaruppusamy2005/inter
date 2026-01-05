@@ -38,8 +38,6 @@ export default function Header() {
           <div className="nav-links">
             <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link>
             <Link to="/#about" className={`nav-link ${isActive('/', '#about') ? 'active' : ''}`}>About</Link>
-            <Link to="/features" className={`nav-link ${isActive('/features') ? 'active' : ''}`}>Features</Link>
-            <Link to="/use-cases" className={`nav-link ${isActive('/use-cases') ? 'active' : ''}`}>Use Cases</Link>
             <Link to="/download" className={`nav-link ${isActive('/download') ? 'active' : ''}`}>Download</Link>
             <Link to="/pricing" className={`nav-link ${isActive('/pricing') ? 'active' : ''}`}>Pricing</Link>
             
