@@ -72,7 +72,7 @@ function Layout() {
 function DownloadRedirect() {
   const windowsDownloadUrl =
     import.meta.env.VITE_WINDOWS_DOWNLOAD_URL ||
-    "https://www.dropbox.com/scl/fi/sstdm99s1mjo83ig7jit9/imodule-Setup-1.0.20.exe?rlkey=8856dpg082s4tm8eqe39bfqg7&st=yq9uy9z9&dl=1";
+    "https://www.dropbox.com/scl/fi/2txmwm3sk8n8hvivaucdh/imodule-Setup-1.0.22.exe?rlkey=cqx2u084o3dwzu4rpe5eaz8jl&st=9vdeqdfd&dl=1";
 
   React.useEffect(() => {
     window.location.href = windowsDownloadUrl;
