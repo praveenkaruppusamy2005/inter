@@ -1,37 +1,8 @@
 {
-  "redirects": [
-    {
-      "source": "/download",
-      "destination": "/download/windows",
-      "permanent": false
-    },
-    {
-      "source": "/download/windows",
-      "destination": "https://www.dropbox.com/scl/fi/sstdm99s1mjo83ig7jit9/imodule-Setup-1.0.20.exe?rlkey=8856dpg082s4tm8eqe39bfqg7&st=yq9uy9z9&dl=1",
-      "permanent": false
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/downloads/(.*)",
-      "destination": "/downloads/$1"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/downloads/(.*)",
-      "headers": [
-        { "key": "Content-Disposition", "value": "attachment" },
-        { "key": "Content-Type", "value": "application/octet-stream" }
-      ]
     }
   ]
 }

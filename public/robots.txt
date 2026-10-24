@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://interviewpro-jet.vercel.app/sitemap.xml
