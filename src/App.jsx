@@ -664,6 +664,7 @@ function Site({ user, signOut, view, setView }) {
               <button onClick={() => setView('home')} className={view === 'home' ? 'active' : ''}>Home</button>
               <button onClick={() => setView('pricing')} className={view === 'pricing' ? 'active' : ''}>Pricing</button>
               <button onClick={() => setView('guide')} className={view === 'guide' ? 'active' : ''}>How to use</button>
+              <button onClick={() => setView('contact')} className={view === 'contact' ? 'active' : ''}>Contact</button>
             </div>
           </div>
           <div className="nav-right">
@@ -678,6 +679,8 @@ function Site({ user, signOut, view, setView }) {
           <HomePage setView={setView} />
         ) : view === 'guide' ? (
           <GuidePage setView={setView} />
+        ) : view === 'contact' ? (
+          <ContactPage />
         ) : (
           <PricingPage user={user} signOut={doSignOut} />
         )}
@@ -706,7 +709,7 @@ function Site({ user, signOut, view, setView }) {
               <div className="foot-hr-col">
                 <div className="foot-hr-col-head">Support</div>
                 <button onClick={() => setView('home')} className="foot-hr-link">FAQ</button>
-                <a href="mailto:support@secureview.app" className="foot-hr-link">Contact</a>
+                <button onClick={() => setView('contact')} className="foot-hr-link">Contact</button>
               </div>
             </div>
           </div>
@@ -978,6 +981,22 @@ function GuidePage({ setView }) {
         <button className="ghostbtn" onClick={() => setView('pricing')}>Get a code →</button>
       </div>
     </div>
+  );
+}
+
+function ContactPage() {
+  return (
+    <main className="contact-page">
+      <div className="contact-card">
+        <span className="contact-kicker">SUPPORT</span>
+        <h1>Contact us</h1>
+        <p>Questions or need a hand? Send us an email and we’ll get back to you.</p>
+        <a className="contact-email" href="mailto:interviewpro4@gmail.com">
+          interviewpro4@gmail.com
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </main>
   );
 }
 
