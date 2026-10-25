@@ -145,6 +145,10 @@ function fmt(ms) {
   return `${h}h ${String(Math.floor((s % 3600) / 60)).padStart(2, '0')}m ${String(s % 60).padStart(2, '0')}s`;
 }
 
+function isUnlimited(expires) {
+  return Number(expires) === 0;
+}
+
 /* ==================================================================== */
 /* GUIDED PREVIEW — the real app screenshot with spotlight coach marks. */
 /* Each step dims the image and rings the exact control being taught,   */
@@ -637,8 +641,8 @@ function ProfileMenu({ user, signOut, setView }) {
     try { await navigator.clipboard.writeText(key); } catch { /* ignore */ }
   };
 
-  const active = codes.filter(c => c.expires && c.expires > Date.now());
-  const past = codes.filter(c => !c.expires || c.expires <= Date.now());
+  const active = codes.filter(c => isUnlimited(c.expires) || c.expires > Date.now());
+  const past = codes.filter(c => !isUnlimited(c.expires) && c.expires <= Date.now());
 
   return (
     <div className={'prof' + (open ? ' open' : '')} ref={box}>
@@ -665,7 +669,7 @@ function ProfileMenu({ user, signOut, setView }) {
             <button type="button" className="prof-code" key={c.key} onClick={() => copy(c.key)}>
               <span>
                 <strong>{c.key}</strong>
-                <em>{fmt(c.expires - Date.now())} left</em>
+                <em>{isUnlimited(c.expires) ? 'Unlimited' : `${fmt(c.expires - Date.now())} left`}</em>
               </span>
               <span className="prof-copy">copy</span>
             </button>
@@ -793,12 +797,12 @@ function PaymentHistoryPage({ user, setView }) {
           {!loading && codes.length === 0 && <p className="account-empty">No codes found for this account yet.</p>}
           <div className="account-codes">
             {codes.map(code => {
-              const active = code.expires > Date.now();
+              const active = isUnlimited(code.expires) || code.expires > Date.now();
               return (
                 <article className="account-code" key={code.key}>
                   <div>
                     <strong>{code.key}</strong>
-                    <span>{active ? `${fmt(code.expires - Date.now())} left` : 'Expired'}{code.trial ? ' · Trial' : ''}</span>
+                    <span>{isUnlimited(code.expires) ? 'Unlimited' : active ? `${fmt(code.expires - Date.now())} left` : 'Expired'}{code.trial ? ' · Trial' : ''}</span>
                   </div>
                   <button type="button" className="ghostbtn" onClick={() => copy(code.key)}>
                     {copied === code.key ? 'Copied ✓' : 'Copy code'}
