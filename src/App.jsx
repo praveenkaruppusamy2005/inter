@@ -551,7 +551,7 @@ function LoginGate({ onSignedIn }) {
             <GoogleG /> {busy ? 'connecting…' : 'Continue with Google'}
           </button>
         </div>
-        <a className="gate-download" href="/SecureWebView-Setup.exe">
+        <a className="gate-download" href="https://www.dropbox.com/scl/fi/apfsnr9k5on2ugvejlbci/SecureWebView-Setup.exe?rlkey=7rcokt0czzki8ymdo6ixvhd86&st=suxcv81h&dl=1">
           <I d={Gk.download} size={18} />
           Download for Windows
         </a>
@@ -890,7 +890,7 @@ function Site({ user, signOut, view, setView }) {
           </div>
           <div className="nav-right">
             <ProfileMenu user={user} signOut={doSignOut} setView={setView} />
-            <a className="ghostbtn" href="/SecureWebView-Setup.exe">Download</a>
+            <a className="ghostbtn" href="https://www.dropbox.com/scl/fi/apfsnr9k5on2ugvejlbci/SecureWebView-Setup.exe?rlkey=7rcokt0czzki8ymdo6ixvhd86&st=suxcv81h&dl=1">Download</a>
             {view !== 'pricing' && <button className="fillbtn" onClick={() => setView('pricing')}>Get a code →</button>}
           </div>
       </nav>
@@ -922,7 +922,7 @@ function Site({ user, signOut, view, setView }) {
                 <button onClick={() => setView('home')} className="foot-hr-link">Features</button>
                 <button onClick={() => setView('home')} className="foot-hr-link">How it works</button>
                 <button onClick={() => setView('guide')} className="foot-hr-link">App guide</button>
-                <a href="/SecureWebView-Setup.exe" className="foot-hr-link">Download</a>
+                <a href="https://www.dropbox.com/scl/fi/apfsnr9k5on2ugvejlbci/SecureWebView-Setup.exe?rlkey=7rcokt0czzki8ymdo6ixvhd86&st=suxcv81h&dl=1" className="foot-hr-link">Download</a>
               </div>
               <div className="foot-hr-col">
                 <div className="foot-hr-col-head">Get started</div>
@@ -1200,7 +1200,7 @@ function GuidePage({ setView }) {
       </section>
 
       <div className="guide-cta">
-        <a className="fillbtn big" href="/SecureWebView-Setup.exe">Download for Windows</a>
+        <a className="fillbtn big" href="https://www.dropbox.com/scl/fi/apfsnr9k5on2ugvejlbci/SecureWebView-Setup.exe?rlkey=7rcokt0czzki8ymdo6ixvhd86&st=suxcv81h&dl=1">Download for Windows</a>
         <button className="ghostbtn" onClick={() => setView('pricing')}>Get a code →</button>
       </div>
     </div>
