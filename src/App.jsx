@@ -1226,9 +1226,12 @@ function ContactPage() {
 function PricingPage({ user, signOut }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState('day');
   const [methods, setMethods] = useState({
     phonepe: true,
     dayPrice: 210,
+    trialPrice: 10,
+    trialMinutes: 5,
   });
 
   useEffect(() => {
@@ -1241,6 +1244,8 @@ function PricingPage({ user, signOut }) {
           ...m,
           phonepe: !!d.phonepe,
           dayPrice: Number(d.day_price_inr) || m.dayPrice,
+          trialPrice: Number(d.trial_price_inr) || m.trialPrice,
+          trialMinutes: Number(d.trial_minutes) || m.trialMinutes,
         }));
       })
       .catch(() => {});
@@ -1257,7 +1262,7 @@ function PricingPage({ user, signOut }) {
         body: JSON.stringify({
           mobile: '9999999999',
           email: user.email || '',
-          plan: 'day',
+          plan: selectedPlan,
         }),
       });
       const d = await r.json();
@@ -1273,7 +1278,8 @@ function PricingPage({ user, signOut }) {
     }
   }
 
-  const price = methods.dayPrice;
+  const isTrial = selectedPlan === 'trial';
+  const price = isTrial ? methods.trialPrice : methods.dayPrice;
 
   return (
     <div className="px-shell">
@@ -1282,13 +1288,23 @@ function PricingPage({ user, signOut }) {
       </div>
       <div className="px-page">
         <div className="px-left">
-          <div className="px-price">₹{price}<span>/day</span></div>
+          <div className="px-plan-tabs" role="tablist" aria-label="Choose an access plan">
+            <button type="button" className={!isTrial ? 'on' : ''} role="tab" aria-selected={!isTrial} onClick={() => setSelectedPlan('day')}>
+              Full day · ₹{methods.dayPrice}
+            </button>
+            <button type="button" className={isTrial ? 'on' : ''} role="tab" aria-selected={isTrial} onClick={() => setSelectedPlan('trial')}>
+              Trial · ₹{methods.trialPrice}
+            </button>
+          </div>
+          <div className="px-price">₹{price}<span>/{isTrial ? `${methods.trialMinutes} min` : 'day'}</span></div>
           <p className="px-tagline">
-            Full day of unseen browsing. Invisible to screen-capture tools on Windows.
+            {isTrial
+              ? `${methods.trialMinutes}-minute trial of unseen browsing. Invisible to screen-capture tools on Windows.`
+              : 'Full day of unseen browsing. Invisible to screen-capture tools on Windows.'}
           </p>
           <ul className="px-feats">
             {[
-              'Access for 24 hours',
+              isTrial ? `Access for ${methods.trialMinutes} minutes` : 'Access for 24 hours',
               'Locked to one device — release anytime via logout',
               'Instant activation code after payment',
               'One-time payment',
@@ -1330,7 +1346,7 @@ function PricingPage({ user, signOut }) {
           </div>
           <div className="px-divider" />
           <div className="px-summary">
-            <div><span>Daily pass</span><b>₹{price}</b></div>
+            <div><span>{isTrial ? 'Trial pass' : 'Daily pass'}</span><b>₹{price}</b></div>
             <div className="px-summary-total"><span>Total due</span><b>₹{price}</b></div>
           </div>
           {methods.phonepe ? (
